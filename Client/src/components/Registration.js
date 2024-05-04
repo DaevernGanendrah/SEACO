@@ -111,7 +111,8 @@ const Registration = () => {
     setErrorMessage(''); // Reset error message on new submission
 
     try {
-      const response = await fetch('http://localhost:5001/api/auth/register', {
+      // const response = await fetch('http://localhost:5001/api/auth/register', {
+        const response = await fetch('https://seaco.onrender.com/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

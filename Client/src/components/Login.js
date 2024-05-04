@@ -756,7 +756,8 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:5001/api/auth/login?username=${username}&password=${password}`, {
+      // const response = await fetch(`http://localhost:5001/api/auth/login?username=${username}&password=${password}`, {
+        const response = await fetch(`https://seaco.onrender.com/api/auth/login?username=${username}&password=${password}`, {
         method: 'GET',
         headers: {
           'Accept': 'application/json',
