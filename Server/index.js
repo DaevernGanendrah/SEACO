@@ -74,9 +74,14 @@ const cors = require('cors');
 const path = require('path');
 const authRoutes = require('./routes/authRoutes');
 
-const app = express();
+// const app = express();
 
-app.use(cors());
+// app.use(cors());
+const cors = require('cors');
+app.use(cors({
+    origin: 'https://seaco.onrender.com' // Adjust this to match the origin from which you expect to call the API
+}));
+
 app.use(express.json());
 
 // Connect to MongoDB
