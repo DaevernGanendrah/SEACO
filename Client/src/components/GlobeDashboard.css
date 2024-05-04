@@ -1,0 +1,298 @@
+
+
+
+
+/* 
+
+
+  @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+
+
+  .globeDashboard {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(17, 16, 16); /* Optional: just to make the sphere more visible 
+  }
+  
+  .globeContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+   
+
+
+
+  .globe-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .globe-popup {
+    position: absolute;
+    /* ... 
+  }
+
+
+
+
+  .sea360Text {
+    margin-bottom: 300px;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    /* color: rgb(106, 104, 103); 
+    color: whitesmoke;
+    font-family: "Quicksand", sans-serif;
+    margin-right: 1000px;
+
+    /* margin: 0; */
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased; 
+  }
+
+  .sea360Text2 {
+    margin-top: 100px;
+    font-size: 20px;
+    /* font-weight: bold; 
+    text-align: center;
+    position: absolute;
+    /* color: rgb(106, 104, 103); 
+    color: whitesmoke;
+    font-family: "Quicksand", sans-serif;
+    margin-right: 1000px;
+    width: 30%;
+   
+
+    /* margin: 0; */
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+
+
+/* .navigateButton {
+    margin-top: 500px;
+    padding: 10px 20px;
+    font-size: 40px;
+    color: white;
+    background-color: #565758;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    width: 400px;
+  }
+  
+  .navigateButton:hover {
+    background-color: #007bff ;
+  } 
+
+
+
+
+
+  .inputBx2 {
+    /* position: relative; 
+    width: 50%;
+    position: absolute;
+    margin-top: 600px;
+    font-family: "Quicksand", sans-serif;
+  }
+  
+  .inputBx2{
+    /* position: relative; 
+    width: 50%;
+    padding: 12px 20px;
+    background: transparent;
+    /* border: 2px solid #fff; 
+    border:none;
+    border-radius: 40px;
+    font-size: 1.2em;
+<<<<<<< HEAD
+    /* color: #fff; 
+=======
+    color: #fff;
+>>>>>>> 72dc868e (Updated dependencies and components, added new component files)
+    /* box-shadow: none; */
+    /* outline: none; 
+    background: linear-gradient(45deg, rgb(17, 16, 16), rgb(106, 104, 103));
+
+    font-family: "Quicksand", sans-serif;
+  }
+
+
+  /* .inputBx2 button{
+    width: 100%;
+    background: #0078ff;
+    background: linear-gradient(45deg, #ff357a, #fff172);
+    background: linear-gradient(45deg, rgb(17, 16, 16), rgb(106, 104, 103));
+    border: none;
+    cursor: pointer;
+  } 
+  .globeDashboard.inputBx button::placeholder {
+<<<<<<< HEAD
+    color: rgba(255, 255, 255, 0.75); 
+=======
+    color: rgba(255, 255, 255, 0.75);
+>>>>>>> 72dc868e (Updated dependencies and components, added new component files)
+  }
+
+
+
+<<<<<<< HEAD
+  .page3Button {
+    border-radius: 50px;
+    height: 50px;
+    position: absolute;
+    margin-top: 600px;
+    width: 300px;
+    font-weight: 700;
+}
+
+=======
+>>>>>>> 72dc868e (Updated dependencies and components, added new component files)
+
+
+
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .sea360Text,
+  .sea360Text2 {
+    opacity: 0; /* Start elements as invisible 
+    animation: fadeInUp 1.5s ease forwards; /* Apply the animation 
+  }
+  
+  .sea360Text {
+    animation-delay: 0.5s; /* Delays the start of the animation 
+  }
+  
+  .sea360Text2 {
+    animation-delay: 1.5s; /* Delays the start of the animation;
+  }
+  
+  /* .inputBx2 {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards 1.5s; /* Fades the button in after the texts 
+  } 
+<<<<<<< HEAD
+  
+
+  
+ 
+=======
+  
+>>>>>>> 72dc868e (Updated dependencies and components, added new component files) */
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+
+.globeDashboard {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(17, 16, 16); /* Maintains a dark theme */
+}
+
+.globeContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.globe-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.globe-popup {
+  position: absolute;
+  /* additional styles might be specified here */
+}
+
+.sea360Text {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  position: absolute;
+  color: whitesmoke;
+  font-family: "Quicksand", sans-serif;
+  margin-right: 1000px; /* consider if this right margin is necessary */
+}
+
+.sea360Text2 {
+  font-size: 20px;
+  text-align: center;
+  position: absolute;
+  color: whitesmoke;
+  font-family: "Quicksand", sans-serif;
+  margin-right: 1000px; /* consider if this right margin is necessary */
+  width: 30%;
+}
+
+.inputBx2 {
+  position: absolute;
+  width: 50%;
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  border-radius: 40px;
+  font-size: 1.2em;
+  color: #fff;
+  background: linear-gradient(45deg, rgb(17, 16, 16), rgb(106, 104, 103));
+  font-family: "Quicksand", sans-serif;
+}
+
+.page3Button {
+  border-radius: 50px;
+  height: 50px;
+  position: absolute;
+  width: 300px;
+  font-weight: 700;
+  background-color: #0078ff; /* Example to ensure it is visible against the dark background */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sea360Text,
+.sea360Text2 {
+  opacity: 0; /* Start elements as invisible */
+  animation: fadeInUp 1.5s ease forwards; /* Apply the animation */
+}
+
+.sea360Text {
+  animation-delay: 0.5s; /* Delays the start of the animation */
+}
+
+.sea360Text2 {
+  animation-delay: 1.5s; /* Delays the start of the animation */
+}

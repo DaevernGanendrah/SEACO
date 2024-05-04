@@ -1,0 +1,381 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    /* background: #111; */
+    background: whitesmoke;
+}
+
+
+/* .header-title {
+    text-align: center;
+    margin: 20px 0;
+    font-family: monospace;
+    font-size: 2.5rem;
+} */
+
+
+.header-container {
+    display: flex;
+    justify-content: space-between; /* This will push the title to the left and the year to the center
+    /* align-items: center; */
+    /* text-align: center; This centers the text in the flex item, if it has multiple lines */
+}
+
+.header-title {
+    /* flex-grow: 1; */
+    text-align: left; /* Aligns the title text to the left */
+    font-size: 1.5rem;
+    margin-left: 20px;
+}
+
+.header-year {
+    flex-grow: 7;
+    text-align: center; /* Centers the year */
+}
+
+
+/* .dashboard{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust based on your layout preference */
+    /* gap: 20px; 
+    padding: 20px;
+} */
+
+.dashboard {
+    display: flex; /* Changed from grid to flex */
+    flex-direction: column; /* Stack children vertically */
+    align-items: right; /* Center children horizontally */
+    padding: 20px;
+    gap: 20px; /* Add space between flex items */
+    text-align-last: center;
+}
+
+
+.number-item{
+    font-size: 100px;
+}
+
+/* Add this to ensure the chart container takes full width for individual item alignment */
+.radial-progress-container {
+    width: 100%; /* Full width of the parent */
+    display: flexbox;
+    align-items: left;
+    /* justify-content: left;  */
+}
+
+
+.dashboard-item {
+    border: 0.5px solid black;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.dashboard-item h2 {
+    text-align: center;
+    margin: 0 0 10px;
+}
+
+h2{
+    font-family: monospace;
+}
+
+
+.tabs {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    position: fixed;
+    right: 0;
+    top: 0;
+    font-family: monospace;
+}
+
+.tablink {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: background-color 0.3s;
+}
+
+.tablink:hover, .tablink.active {
+    background-color: #ddd;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    margin-top: 50px;
+}
+
+#map2013, #map2018 {
+    height: 100%; /* Adjust the height as necessary */
+    width: 100%;
+    /* filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); */
+}
+
+/* Adjust your graph sizes as needed */
+canvas {
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.leaflet-tile {
+    filter: invert(100%);
+}
+
+.community-briefs-title {
+    font-size: 50px;
+    color: whitesmoke; /* Example color */
+    /* text-align: center; */
+    font-family: "Quicksand", sans-serif;
+    text-align: left;
+    margin-left: 70px;
+    margin-top: 50px;
+    font-weight: lighter;
+}
+
+
+
+
+
+
+
+
+.radial-progress-path {
+    animation: draw 2s ease-in forwards;
+  }
+  
+  .radial-progress-text {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 2s forwards;
+  }
+  
+  .radial-progress-label {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out 1s forwards;
+  }
+  
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+  .accordion-button {
+    background-color: #f1f1f1;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    margin-top: 20px; /* Space between accordions 
+  }
+  
+  .accordion-button:after {
+    content: '\002B'; /* Unicode character for "plus" sign (+) 
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .accordion-button.active:after {
+    content: "\2212"; /* Unicode character for "minus" sign (−) 
+  }
+  
+  .accordion-content {
+    padding: 0 18px;
+    background-color:#111;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-bottom: 20px; /* Space after the expanded content 
+  }
+   */
+
+
+/* 
+
+
+  .dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    align-items: start;
+    background-color: #111;
+    color: #fff;
+    padding: 16px;
+  }
+  
+  .chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .chart-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  .numbers-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 24px;
+  }
+  
+  .number-item {
+    margin: 4px 0;
+  } */
+
+
+
+
+
+
+
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    /* background-color: #111; */
+    background-color: whitesmoke;
+    /* color: white; */
+    color: black;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .community-briefs-title {
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  .accordion {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .accordion-button {
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+
+  .accordion-button:hover {
+    background-color: #444; /* Slightly darker on hover */
+  }
+  
+  .accordion-button:after {
+    content: '▼'; /* Unicode character for a down arrow */
+    float: right;
+    transition: transform 0.3s ease;
+  }
+  
+  .accordion-button.active:after {
+    transform: rotate(180deg); /* Flip the arrow to indicate collapse */
+  }
+  
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    /* background-color: #111; Color of the accordion content background */
+    background-color: whitesmoke; /* Color of the accordion content background */
+  }
+  
+  .accordion-content.active {
+    max-height: 1000px; /* Arbitrary large height to accommodate content */
+  }
+  
+  /* Styles for the grid layout of the accordion content */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 50px; /* Space between grid items */
+    padding: 16px; /* Padding inside the grid */
+  }
+  
+  .chart-container,
+  .numbers-container {
+    text-align: center;
+  }
+  
+  .number-item {
+    font-size: 2em;
+    margin: 5px 0;
+  }
+  
+
+
+
+
+  .chart-container {
+    width: 800px; 
+    height: 100px; 
+  }
+
+
+
+  .accordion-section {
+    width: 80%; /* This will ensure that each section takes full width */
+    align-content: center;
+  }
+  
+  .accordion-button {
+    width: 80%; /* This will make each button stretch to the full width of its container */
+    /* Add other styling for your buttons */
+  }
+  
+  .accordion-content {
+    width: 100%; /* This ensures the content area also stretches to full width */
+    /* Add other styling for your content area */
+  }

@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+.page3-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #111;
+  }
+  
+  .buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adjust the gap between buttons as needed */
+    /* font-size: 30px;
+    color: white;
+    background-color: #565758;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; */
+    width: 500px;
+    font-family: "Quicksand", sans-serif;
+    /* height: 100%; */
+  
+  }  
+
+
+
+
+  /* .navigateButton3 {
+    /* margin-top: 200px;
+    padding: 10px 20px; 
+    font-size: 40px;
+    color: white;
+    background-color: #565758;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* position: absolute; 
+    height: 100px; 
+  }
+  
+  .navigateButton3:hover {
+    background-color: #007bff ;
+  } */
+
+
+
+  
+  .inputBx3{
+    /* position: relative; */
+    /* position: absolute; */
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    /* border: 2px solid #fff; */
+    border:none;
+    border-radius: 40px;
+    font-size: 1.2em;
+    color: #fff;
+    /* box-shadow: none; */
+    /* outline: none; */
+    background: linear-gradient(45deg, rgb(17, 16, 16), rgb(106, 104, 103));
+    font-family: "Quicksand", sans-serif;
+    font-weight: bold;
+  }
+
+  .inputBx3:hover {
+    background-color: #007bff ;
+  } 
