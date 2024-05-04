@@ -10,7 +10,7 @@
     "build-client": "cd client && npm run build",
     "build-server": "echo 'No build process required for server'",
     "start": "npm run start-server & npm run serve-client",
-    "start-server": "cd server && node index.js",
+    "start-server": "cd server && node --max-old-space-size=4096 index.js",
     "serve-client": "cd client && npm install -g serve && serve -s build"
   },
   "author": "",
