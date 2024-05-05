@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "install-deps": "npm run install-client && npm run install-server",
-    "install-client": "cd client && npm install",
-    "install-server": "cd server && npm install",
+    "install-client": "cd Client && npm install",
+    "install-server": "cd Server && npm install",
     "build": "npm run build-client && npm run build-server",
-    "build-client": "cd client && npm run build",
+    "build-client": "cd Client && npm run build",
     "build-server": "echo 'No build process required for server'",
     "start": "npm run start-server & npm run serve-client",
-    "start-server": "cd server && node --max-old-space-size=4096 index.js",
-    "serve-client": "cd client && npx serve -s build"
+    "start-server": "cd Server && node --max-old-space-size=4096 index.js",
+    "serve-client": "cd Client && npx serve -s build"
   },
   "author": "",
   "license": "ISC",
