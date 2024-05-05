@@ -237,7 +237,8 @@
   position: absolute;
   color: whitesmoke;
   font-family: "Quicksand", sans-serif;
-  margin-right: 1000px; /* consider if this right margin is necessary */
+  margin-right: 1000px; 
+  margin-bottom: 20%;
 }
 
 .sea360Text2 {
@@ -246,9 +247,13 @@
   position: absolute;
   color: whitesmoke;
   font-family: "Quicksand", sans-serif;
-  margin-right: 1000px; /* consider if this right margin is necessary */
+  margin-right: 1000px; 
   width: 30%;
+  margin-top: 15%;
 }
+
+
+
 
 .inputBx2 {
   position: absolute;
@@ -263,13 +268,32 @@
   font-family: "Quicksand", sans-serif;
 }
 
-.page3Button {
+/* .page3Button {
   border-radius: 50px;
   height: 50px;
   position: absolute;
   width: 300px;
   font-weight: 700;
-  background-color: #0078ff; /* Example to ensure it is visible against the dark background */
+  background: linear-gradient(45deg, rgb(17, 16, 16), rgb(106, 104, 103));
+} */
+
+.page3Button {
+  /* position: relative; */
+  position: absolute;
+  width: 50%;
+  padding: 12px 20px;
+  background: transparent;
+  /* border: 2px solid #fff; */
+  border: none;
+  border-radius: 40px;
+  font-size: 1.2em;
+  color: #fff;
+  /* box-shadow: none; */
+  /* outline: none; */
+  background: linear-gradient(45deg, rgb(17, 16, 16), rgb(106, 104, 103));
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  margin-top: 40%;
 }
 
 @keyframes fadeInUp {

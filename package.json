@@ -2,7 +2,8 @@
   "name": "yzm",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js", "scripts": {
+  "main": "index.js",
+  "scripts": {
     "install-deps": "npm run install-client && npm run install-server",
     "install-client": "cd client && npm install",
     "install-server": "cd server && npm install",
@@ -14,5 +15,8 @@
     "serve-client": "cd client && npx serve -s build"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "heapdump": "^0.3.15"
+  }
 }
