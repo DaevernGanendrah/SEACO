@@ -10,15 +10,15 @@
     "build": "npm run build-client && npm run build-server",
     "build-client": "cd Client && npm run build",
     "build-server": "echo 'No build process required for server'",
-    "start": "npm run start-server & npm run serve-client",
+    "start": "concurrently \"npm run start-server\" \"npm run serve-client\"",
     "start-server": "cd Server && node --max-old-space-size=4096 index.js",
-    "serve-client": "cd Client && npx serve -s build"
+    "serve-client": "cd Client && serve -s build"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "heapdump": "^0.3.15"
+    "concurrently": "^7.6.0",
+    "heapdump": "^0.3.15",
+    "serve": "^14.2.3"
   }
 }
-
-
