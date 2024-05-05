@@ -5,6 +5,9 @@
   "main": "index.js",
 
   "scripts": {
+    "start": "concurrently \"npm run start-server\" \"npm run serve-client\"",
+    "start-server": "cd Server && node --max-old-space-size=4096 index.js",
+    "serve-client": "cd Client && serve -s build",
     "install-deps": "npm run install-client && npm run install-server",
     "install-client": "cd Client && rm -rf node_modules && npm install",
     "install-server": "cd Server && rm -rf node_modules && npm install",
