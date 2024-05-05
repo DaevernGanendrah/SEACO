@@ -11,7 +11,7 @@
     "build-server": "echo 'No build process required for server'",
     "start": "npm run start-server & npm run serve-client",
     "start-server": "cd server && node --max-old-space-size=${NODE_MAX_MEM} index.js",
-    "serve-client": "cd client && npm install -g serve && serve -s build"
+    "serve-client": "cd client && npx serve -s build"
   },
   "author": "",
   "license": "ISC"
