@@ -533,39 +533,58 @@ function Login() {
 
 
 
-      const handleSubmit = async (e) => {
-    e.preventDefault();
-    // Hard-coded check for username and password
-    if (username === "dhesi" && password === "dmd12345") {
-        try {
-            const response = await fetch('https://seaco.onrender.com/api/auth/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                },
-                body: JSON.stringify({
-                    username: username,
-                    password: password
-                })
-            });
+//       const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     // Hard-coded check for username and password
+//     if (username === "dhesi" && password === "dmd12345") {
+//         try {
+//             const response = await fetch('https://seaco.onrender.com/api/auth/login', {
+//                 method: 'POST',
+//                 headers: {
+//                     'Content-Type': 'application/json',
+//                     'Accept': 'application/json',
+//                 },
+//                 body: JSON.stringify({
+//                     username: username,
+//                     password: password
+//                 })
+//             });
 
-            const data = await response.json();
+//             const data = await response.json();
             
-            if (response.ok) {
-                console.log('Login successful:', data);
-                navigate('/globedashboard');  // Redirect to the dashboard page
-            } else {
-                alert(data.message || 'Login failed. Please try again.');
-            }
-        } catch (error) {
-            console.error('Login error:', error);
-            alert('An error occurred. Please try again later.');
+//             if (response.ok) {
+//                 console.log('Login successful:', data);
+//                 navigate('/globedashboard');  // Redirect to the dashboard page
+//             } else {
+//                 alert(data.message || 'Login failed. Please try again.');
+//             }
+//         } catch (error) {
+//             console.error('Login error:', error);
+//             alert('An error occurred. Please try again later.');
+//         }
+//     } else {
+//         alert('Invalid username or password. Please try again.');
+//     }
+// };
+
+
+
+
+const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        // Hard-coded credentials
+        const hardcodedUsername = 'dhesi';
+        const hardcodedPassword = 'dmd12345';
+
+        // Check if the entered credentials match the hardcoded ones
+        if (username === hardcodedUsername && password === hardcodedPassword) {
+            console.log('Login successful');
+            navigate('/globedashboard'); // Redirect to the dashboard page
+        } else {
+            alert('Invalid username or password. Please try again.');
         }
-    } else {
-        alert('Invalid username or password. Please try again.');
-    }
-};
+    };
 
       
   return (
