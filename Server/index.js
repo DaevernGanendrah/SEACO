@@ -39,8 +39,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+// // Connect to MongoDB
+// mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() => {
+//     console.log('Connected to MongoDB');
+//     app.listen(process.env.PORT, () => console.log(`Server running on port ${process.env.PORT}`));
+//   })
+//   .catch(err => console.error(err));
+
+// Connect to MongoDB without deprecated options
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('Connected to MongoDB');
     app.listen(process.env.PORT, () => console.log(`Server running on port ${process.env.PORT}`));
@@ -51,11 +59,13 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 app.use('/api/auth', authRoutes);
 
 // Serve Static Files - Make sure this comes after your API routes
-app.use(express.static(path.join(__dirname, 'build')));
+// app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, '../Client/build')));
 
 // Handle React routing, return all requests to React app
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  // res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, '../Client/build', 'index.html'));
 });
 
 
