@@ -36,7 +36,12 @@ const path = require('path');
 
 const app = express();
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+    origin: 'https://seaco.onrender.com', // Adjust this to your client’s domain
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 // // Connect to MongoDB
