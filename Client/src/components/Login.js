@@ -503,7 +503,7 @@ function Login() {
     e.preventDefault();
     try {
       const response = await fetch('https://seaco.onrender.com/api/auth/login', {
-        method: 'GET',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
