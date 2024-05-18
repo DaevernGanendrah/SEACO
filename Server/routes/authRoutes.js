@@ -72,8 +72,35 @@ router.post('/register', async (req, res) => {
   
 
 
+// router.post('/login', async (req, res) => {
+//      console.log("Login route hit");
+//     try {
+//         const { username, password } = req.body;
+//         const user = await User.findOne({ username });
+
+//         if (!user) {
+//             return res.status(404).json({ message: 'User not found' });
+//         }
+
+//         const isMatch = await bcrypt.compare(password, user.password);
+//         if (!isMatch) {
+//             return res.status(400).json({ message: 'Invalid credentials' });
+//         }
+
+//         // If not using JWT, simply return a success message
+//         res.status(200).json({ message: "Login successful", username: user.username });
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).json({ message: 'Server error' });
+//     }
+// });
+
+
+const express = require('express');
+const User = require('../models/User');  // Make sure the path to your User model is correct
+const router = express.Router();
+
 router.post('/login', async (req, res) => {
-     console.log("Login route hit");
     try {
         const { username, password } = req.body;
         const user = await User.findOne({ username });
@@ -82,18 +109,21 @@ router.post('/login', async (req, res) => {
             return res.status(404).json({ message: 'User not found' });
         }
 
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) {
+        // Directly compare the password sent by the client to the one in the database
+        if (password !== user.password) {
             return res.status(400).json({ message: 'Invalid credentials' });
         }
 
-        // If not using JWT, simply return a success message
+        // If passwords match, proceed with login success response
         res.status(200).json({ message: "Login successful", username: user.username });
     } catch (error) {
-        console.error(error);
+        console.error('Login error:', error);
         res.status(500).json({ message: 'Server error' });
     }
 });
+
+module.exports = router;
+
 
 
 
