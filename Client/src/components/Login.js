@@ -499,39 +499,75 @@ function Login() {
 
 
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('https://seaco.onrender.com/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          username: username,
-          password: password
-        })
-      });
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await fetch('https://seaco.onrender.com/api/auth/login', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         'Accept': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         username: username,
+  //         password: password
+  //       })
+  //     });
 
-      const data = await response.json();
+  //     const data = await response.json();
       
-      if (response.ok) {
-        // Assuming the server sends some token or user data
-        // Store it locally or handle accordingly
-        console.log('Login successful:', data);
-        navigate('/globedashboard');  // Redirect or handle successful login
-      } else {
-        // Display error message from server or generic error if none provided
-        alert(data.message || 'Login failed. Please try again.');
-      }
-    } catch (error) {
-      console.error('Login error:', error);
-      alert('An error occurred. Please try again later.');
+  //     if (response.ok) {
+  //       // Assuming the server sends some token or user data
+  //       // Store it locally or handle accordingly
+  //       console.log('Login successful:', data);
+  //       navigate('/globedashboard');  // Redirect or handle successful login
+  //     } else {
+  //       // Display error message from server or generic error if none provided
+  //       alert(data.message || 'Login failed. Please try again.');
+  //     }
+  //   } catch (error) {
+  //     console.error('Login error:', error);
+  //     alert('An error occurred. Please try again later.');
+  //   }
+  // };
+
+
+
+      const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Hard-coded check for username and password
+    if (username === "dhesi" && password === "dmd12345") {
+        try {
+            const response = await fetch('https://seaco.onrender.com/api/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: username,
+                    password: password
+                })
+            });
+
+            const data = await response.json();
+            
+            if (response.ok) {
+                console.log('Login successful:', data);
+                navigate('/globedashboard');  // Redirect to the dashboard page
+            } else {
+                alert(data.message || 'Login failed. Please try again.');
+            }
+        } catch (error) {
+            console.error('Login error:', error);
+            alert('An error occurred. Please try again later.');
+        }
+    } else {
+        alert('Invalid username or password. Please try again.');
     }
-  };
+};
 
-
+      
   return (
     <>
       <style jsx="true">{`
