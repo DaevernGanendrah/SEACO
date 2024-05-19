@@ -134,7 +134,7 @@ function GlobeDashboard() {
     };
   }, []);
 
-  // return (
+  return (
   //   <div className="globeDashboard">
   //     <div ref={globeRef} className="globeContainer" />
   //     // <div className="sea360Text">Welcome <p>to</p>SEACO 360</div>
