@@ -1,3 +1,4 @@
+
 // import React, { useRef, useEffect } from 'react';
 // import {
 //   Chart,
@@ -18,7 +19,6 @@
 //   Tooltip,
 //   Legend
 // );
-
 
 // const CensusChart = () => {
 //   const chartRef = useRef(null);
@@ -41,7 +41,19 @@
 //       },
 //       options: {
 //         responsive: true,
-//         maintainAspectRatio: false
+//         maintainAspectRatio: false,
+//         scales: {
+//           x: {
+//             grid: {
+//               display: false // This will hide the grid lines on the x-axis
+//             }
+//           },
+//           y: {
+//             grid: {
+//               display: false // This will hide the grid lines on the y-axis
+//             }
+//           }
+//         }
 //       }
 //     });
 
@@ -52,11 +64,38 @@
 //     };
 //   }, []);
 
-//   // Set custom height here directly in the canvas element
-//   return <canvas ref={chartRef} width="500" height="50" />;
+//   // Set custom dimensions here directly in the canvas element
+//   // Adjust the size to smaller dimensions as needed
+//   return <canvas ref={chartRef} width="200" height="200" style={{ maxWidth: '70%'}} />;
 // };
 
 // export default CensusChart;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 import React, { useRef, useEffect } from 'react';
@@ -89,6 +128,7 @@ const CensusChart = () => {
       chartInstance.current.destroy();
     }
 
+ 
     chartInstance.current = new Chart(chartRef.current, {
       type: 'bar',
       data: {
@@ -96,7 +136,19 @@ const CensusChart = () => {
         datasets: [{
           label: 'Response Types',
           data: [11594, 603, 4382, 2192],
-          backgroundColor: ['#00a2ff', '#4dff4d', '#ff4dff', 'red']
+          backgroundColor: [
+            'rgba(0, 162, 255, 0.2)', // Light blue
+            'rgba(77, 255, 77, 0.2)', // Light green
+            'rgba(255, 77, 255, 0.2)', // Light purple
+            'rgba(255, 0, 0, 0.2)' // Light red
+          ],
+          borderColor: [
+            'rgba(0, 162, 255, 1)', // Blue
+            'rgba(77, 255, 77, 1)', // Green
+            'rgba(255, 77, 255, 1)', // Purple
+            'rgba(255, 0, 0, 1)' // Red
+          ],
+          borderWidth: 1
         }]
       },
       options: {
@@ -116,6 +168,7 @@ const CensusChart = () => {
         }
       }
     });
+    
 
     return () => {
       if (chartInstance.current) {
@@ -130,4 +183,5 @@ const CensusChart = () => {
 };
 
 export default CensusChart;
+
 
