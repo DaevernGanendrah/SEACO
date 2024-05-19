@@ -9,14 +9,6 @@ body {
 }
 
 
-/* .header-title {
-    text-align: center;
-    margin: 20px 0;
-    font-family: monospace;
-    font-size: 2.5rem;
-} */
-
-
 .header-container {
     display: flex;
     justify-content: space-between; /* This will push the title to the left and the year to the center
@@ -36,13 +28,6 @@ body {
     text-align: center; /* Centers the year */
 }
 
-
-/* .dashboard{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Adjust based on your layout preference */
-    /* gap: 20px; 
-    padding: 20px;
-} */
 
 .dashboard {
     display: flex; /* Changed from grid to flex */
@@ -81,7 +66,8 @@ body {
 }
 
 h2{
-    font-family: monospace;
+    /* font-family: monospace; */
+    font-family: "Quicksand", sans-serif;
 }
 
 
@@ -120,7 +106,7 @@ h2{
 #map2013, #map2018 {
     height: 100%; /* Adjust the height as necessary */
     width: 100%;
-    /* filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%); */
+
 }
 
 /* Adjust your graph sizes as needed */
@@ -144,13 +130,6 @@ canvas {
     margin-top: 50px;
     font-weight: lighter;
 }
-
-
-
-
-
-
-
 
 .radial-progress-path {
     animation: draw 2s ease-in forwards;
@@ -177,102 +156,6 @@ canvas {
       opacity: 1;
     }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-  .accordion-button {
-    background-color: #f1f1f1;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 18px;
-    margin-top: 20px; /* Space between accordions 
-  }
-  
-  .accordion-button:after {
-    content: '\002B'; /* Unicode character for "plus" sign (+) 
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-  }
-  
-  .accordion-button.active:after {
-    content: "\2212"; /* Unicode character for "minus" sign (−) 
-  }
-  
-  .accordion-content {
-    padding: 0 18px;
-    background-color:#111;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    margin-bottom: 20px; /* Space after the expanded content 
-  }
-   */
-
-
-/* 
-
-
-  .dashboard {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    align-items: start;
-    background-color: #111;
-    color: #fff;
-    padding: 16px;
-  }
-  
-  .chart-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .chart-title {
-    font-size: 24px;
-    margin-bottom: 16px;
-    text-align: center;
-  }
-  
-  .numbers-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    font-size: 24px;
-  }
-  
-  .number-item {
-    margin: 4px 0;
-  } */
-
-
-
-
-
 
 
   .dashboard {
@@ -334,6 +217,7 @@ canvas {
   
   .accordion-content.active {
     max-height: 1000px; /* Arbitrary large height to accommodate content */
+    /* margin-left: 100px; */
     text-align: -webkit-center;
   }
   
