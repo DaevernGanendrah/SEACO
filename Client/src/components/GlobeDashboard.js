@@ -134,11 +134,18 @@ function GlobeDashboard() {
     };
   }, []);
 
-  return (
-    <div className="globeDashboard">
+  // return (
+  //   <div className="globeDashboard">
+  //     <div ref={globeRef} className="globeContainer" />
+  //     // <div className="sea360Text">Welcome <p>to</p>SEACO 360</div>
+  //     // <div className="sea360Text2">SEACO is a developing longitudinal demographic health surveillance site located in Malaysia. It captures longitudinal biomedical, health, social, educational and environmental data on a population of approximately 70,000 people. High-quality data will be accessible for secondary analyses, or we can provide experienced data collectors for primary data collection</div> 
+  //   <button onClick={() => navigate('/page3')} className="page3Button"> START </button>
+  //   </div>
+  // );
+
+
+      <div className="globeDashboard">
       <div ref={globeRef} className="globeContainer" />
-      // <div className="sea360Text">Welcome <p>to</p>SEACO 360</div>
-      // <div className="sea360Text2">SEACO is a developing longitudinal demographic health surveillance site located in Malaysia. It captures longitudinal biomedical, health, social, educational and environmental data on a population of approximately 70,000 people. High-quality data will be accessible for secondary analyses, or we can provide experienced data collectors for primary data collection</div>
       <div className="sea360Text">
         Welcome
         <div>to</div>
@@ -146,8 +153,8 @@ function GlobeDashboard() {
       </div>
       <div className="sea360Text2">
         SEACO is a developing longitudinal demographic health surveillance site located in Malaysia. It captures longitudinal biomedical, health, social, educational, and environmental data on a population of approximately 70,000 people. High-quality data will be accessible for secondary analyses, or we can provide experienced data collectors for primary data collection.
-      </div> 
-    <button onClick={() => navigate('/page3')} className="page3Button"> START </button>
+      </div>
+      <button onClick={() => navigate('/page3')} className="page3Button">START</button>
     </div>
   );
 }
