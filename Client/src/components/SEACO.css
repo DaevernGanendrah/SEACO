@@ -334,6 +334,7 @@ canvas {
   
   .accordion-content.active {
     max-height: 1000px; /* Arbitrary large height to accommodate content */
+    text-align: -webkit-center;
   }
   
   /* Styles for the grid layout of the accordion content */
