@@ -28,8 +28,8 @@ function Page3() {
       <div className="buttons-container">
         {/* <button className="inputBx3">Community Briefs</button> */}
         <button onClick={() => navigate('/dashboard')} className="inputBx3">Community Briefs</button>
-        <button className="inputBx3">Health Record 2013</button>
-        <button className="inputBx3">Health Record 2018</button>
+        <button className="inputBx3">Health Round 2013</button>
+        <button className="inputBx3">Health Round 2018</button>
       </div>
     </div>
   );
