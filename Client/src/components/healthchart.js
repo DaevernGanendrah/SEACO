@@ -254,12 +254,16 @@ const HealthChart = () => {
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '20px', width: '70%', margin: 'auto' }}>
       <div style={{ marginBottom: '10%', width: '100%', height: '300px' }}>
-        <h2>Number of Chronic Diseases</h2>
-        <Bar data={barChartData} options={{ responsive: true, maintainAspectRatio: false }} />
+        // <h2>Number of Chronic Diseases</h2>
+        <h2>Percentage of Reported Chronic Diseases</h2>
+        // <Bar data={barChartData} options={{ responsive: true, maintainAspectRatio: false }} />
+       <Bubble data={bubbleChartData} options={bubbleChartOptions} />
       </div>
       <div style={{ marginBottom: '10%', width: '100%', height: '300px' }}>
-        <h2>Percentage of Reported Chronic Diseases</h2>
-        <Bubble data={bubbleChartData} options={bubbleChartOptions} />
+        // <h2>Percentage of Reported Chronic Diseases</h2>
+          <h2>Number of Chronic Diseases</h2>
+        // <Bubble data={bubbleChartData} options={bubbleChartOptions} />
+     <Bar data={barChartData} options={{ responsive: true, maintainAspectRatio: false }} />
       </div>
     </div>
   );
