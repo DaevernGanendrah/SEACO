@@ -162,7 +162,7 @@ class Dashboard extends React.Component {
     };
 
     const numbers = ["24,992", "10,364", "3,368", "902"];
-    const dropdownNames = ["Census", "Household and Families", "Health", "Economic Activities", "Employment Rates", "People"];
+    const dropdownNames = ["Health", "Economic Activities", "Household and Families", "Census", "People"];
 
     return (
       <div className="dashboard">
