@@ -152,7 +152,7 @@ function GlobeDashboard() {
         <div>SEACO 360</div>
       </div>
       <div className="sea360Text2">
-        SEACO is a developing longitudinal demographic health surveillance site located in Malaysia. It captures longitudinal biomedical, health, social, educational, and environmental data on a population of approximately 70,000 people. High-quality data will be accessible for secondary analyses, or we can provide experienced data collectors for primary data collection.
+        SEACO is a health and demographic surveillance system located in Malaysia. It captures longitudinal demographic, socioeconomic, health, and environmental data on approximately 40,000 populations. High-quality data will be accessible for secondary analyses, or we can provide experienced data collectors for primary data collection.
       </div>
       <button onClick={() => navigate('/page3')} className="page3Button">START</button>
     </div>
