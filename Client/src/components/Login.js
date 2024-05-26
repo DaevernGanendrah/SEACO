@@ -414,30 +414,6 @@ function Login() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     // Note: Modify the fetch URL and method as per your backend API.
-  //     const response = await fetch(`http://:5001/api/auth/login?username=${username}&password=${password}`, {
-  //       method: 'GET',
-  //       headers: {
-  //         'Accept': 'application/json',
-  //       },
-  //     });
-
-  //     const data = await response.json();
-      
-  //     if (response.ok) {
-  //       localStorage.setItem('token', data.token);
-  //       navigate('/globedashboard');
-  //     } else {
-  //       alert(data.message || 'Login failed. Please try again.');
-  //     }
-  //   } catch (error) {
-  //     console.error('Login error:', error);
-  //     alert('An error occurred. Please try again later.');
-  //   }
-  // };
 
 
   // const handleSubmit = async (e) => {
@@ -452,120 +428,6 @@ function Login() {
   //       },
   //     });
 
-  //     const data = await response.json();
-      
-  //     if (response.ok) {
-  //       localStorage.setItem('token', data.token);
-  //       navigate('/globedashboard');  // Ensure navigate is correctly defined and used here.
-  //     } else {
-  //       alert(data.message || 'Login failed. Please try again.');
-  //     }
-  //   } catch (error) {
-  //     console.error('Login error:', error);
-  //     alert('An error occurred. Please try again later.');
-  //   }
-  // };
-
-
-
-//       const handleSubmit = async (e) => {
-//   e.preventDefault();
-//   try {
-//     const response = await fetch('https://seaco.onrender.com/api/auth/login', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//         'Accept': 'application/json',
-//       },
-//       body: JSON.stringify({
-//         username: username,
-//         password: password
-//       })
-//     });
-
-//     const data = await response.json();
-    
-//     if (response.ok) {
-//       // Assuming successful login redirects to '/globedashboard'
-//       navigate('/globedashboard');
-//     } else {
-//       alert(data.message || 'Login failed. Please try again.');
-//     }
-//   } catch (error) {
-//     console.error('Login error:', error);
-//     alert('An error occurred. Please try again later.');
-//   }
-// };
-
-
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await fetch('https://seaco.onrender.com/api/auth/login', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //         'Accept': 'application/json',
-  //       },
-  //       body: JSON.stringify({
-  //         username: username,
-  //         password: password
-  //       })
-  //     });
-
-  //     const data = await response.json();
-      
-  //     if (response.ok) {
-  //       // Assuming the server sends some token or user data
-  //       // Store it locally or handle accordingly
-  //       console.log('Login successful:', data);
-  //       navigate('/globedashboard');  // Redirect or handle successful login
-  //     } else {
-  //       // Display error message from server or generic error if none provided
-  //       alert(data.message || 'Login failed. Please try again.');
-  //     }
-  //   } catch (error) {
-  //     console.error('Login error:', error);
-  //     alert('An error occurred. Please try again later.');
-  //   }
-  // };
-
-
-
-//       const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     // Hard-coded check for username and password
-//     if (username === "dhesi" && password === "dmd12345") {
-//         try {
-//             const response = await fetch('https://seaco.onrender.com/api/auth/login', {
-//                 method: 'POST',
-//                 headers: {
-//                     'Content-Type': 'application/json',
-//                     'Accept': 'application/json',
-//                 },
-//                 body: JSON.stringify({
-//                     username: username,
-//                     password: password
-//                 })
-//             });
-
-//             const data = await response.json();
-            
-//             if (response.ok) {
-//                 console.log('Login successful:', data);
-//                 navigate('/globedashboard');  // Redirect to the dashboard page
-//             } else {
-//                 alert(data.message || 'Login failed. Please try again.');
-//             }
-//         } catch (error) {
-//             console.error('Login error:', error);
-//             alert('An error occurred. Please try again later.');
-//         }
-//     } else {
-//         alert('Invalid username or password. Please try again.');
-//     }
-// };
 
 
 
@@ -827,16 +689,14 @@ body {
       `}</style>
       <div className="login-container">
         <div className="ring">
-          <i style={{ '--clr': '#00ff0a' }}></i>
-          <i style={{ '--clr': '#ff0057' }}></i>
-          <i style={{ '--clr': '#fffd44' }}></i>
+
+   
+         
           {/* <div className="login">
             <form onSubmit={handleSubmit}>
               <h2>Login</h2> */}
 
-          {/* <i style={{ '--clr': '#00ff0a' }}></i>
-          <i style={{ '--clr': '#ff0057' }}></i>
-          <i style={{ '--clr': '#fffd44' }}></i> */}
+        
 
 
           <i style={{ '--clr': 'gray' }}></i>

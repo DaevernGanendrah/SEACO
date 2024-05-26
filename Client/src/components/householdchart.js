@@ -451,10 +451,6 @@ const HouseholdChart = () => {
         <Doughnut data={radialChartData}  options={commonOptions} />
       </div>
 
-
-      <div>
-    </div>
-
     </div>
     </div>
   );

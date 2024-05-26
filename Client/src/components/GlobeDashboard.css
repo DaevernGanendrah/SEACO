@@ -275,6 +275,53 @@
   margin-top: 10%;
 }
 
+/* Base styles */
+.sea360Text > div {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 24px; /* Default font size for large screens */
+}
+
+.globeDashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) { /* Tablet and down */
+  .sea360Text > div {
+    font-size: 20px; /* Smaller font size for tablets */
+  }
+
+  .sea360Text2 {
+    font-size: 14px; /* Adjust text size for readability on smaller screens */
+  }
+
+  .page3Button {
+    padding: 10px 20px; /* Larger button for easier tapping on touch devices */
+  }
+}
+
+@media (max-width: 480px) { /* Mobile */
+  .sea360Text > div {
+    font-size: 16px; /* Even smaller font size for mobile */
+  }
+
+  .sea360Text2 {
+    font-size: 12px; /* Smaller text size for mobile readability */
+  }
+
+  .page3Button {
+    width: 100%; /* Full-width button for easier access on mobile */
+    padding: 12px 0; /* Adjust padding to maintain usability */
+  }
+}
+
+
 
 
 .inputBx2 {
