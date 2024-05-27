@@ -389,3 +389,29 @@
 .sea360Text2 {
   animation-delay: 1.5s; /* Delays the start of the animation */
 }
+
+
+/* Styles for positioning the images */
+.dashboardImage {
+  position: absolute; /* Position the images absolutely within their parent container */
+  bottom: 0; /* Align to the bottom */
+  width: 50px; /* Set the new smaller width */
+  height: 50px; /* Set the new smaller height */
+  object-fit: contain; /* Ensure the entire image is visible without distortion */
+}
+
+
+
+
+/* Positioning the first image on the bottom left */
+.dashboardImage:first-of-type {
+  left: 100; /* Position the first image at the very left */
+}
+
+
+
+
+/* Positioning the second image next to the first, with some spacing */
+.dashboardImage:last-of-type {
+  left: 320px; /* Position the second image to the right of the first image, adjusting the space */
+}
