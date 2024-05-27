@@ -218,7 +218,7 @@ canvas {
   }
   
   .accordion-content.active {
-    min-height: 950px; /* Arbitrary large height to accommodate content */
+    max-height: 1050px; /* Arbitrary large height to accommodate content */
     /* margin-left: 100px; */
     text-align: -webkit-center;
   }
