@@ -80,9 +80,8 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { useNavigate } from 'react-router-dom';
 import './GlobeDashboard.css'; // Ensure you have GlobeDashboard.css with appropriate styles
-import image1 from './src/components/images/image1.png'; // Importing image1
-import image2 from './src/components/images/image2.png'; // Importing image2
-
+import image1 from './images/image1.png';
+import image2 from './images/image2.png';
 
 function GlobeDashboard() {
   const globeRef = useRef(null);
