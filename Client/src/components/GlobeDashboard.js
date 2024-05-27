@@ -80,6 +80,9 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { useNavigate } from 'react-router-dom';
 import './GlobeDashboard.css'; // Ensure you have GlobeDashboard.css with appropriate styles
+import image1 from '../src/components/images/image1.jpg'; // Importing image1
+import image2 from '../src/components/images/image2.jpg'; // Importing image2
+
 
 function GlobeDashboard() {
   const globeRef = useRef(null);
@@ -154,6 +157,11 @@ function GlobeDashboard() {
       <div className="sea360Text2">
         SEACO is a health and demographic surveillance system located in Malaysia. It captures longitudinal demographic, socioeconomic, health, and environmental data on approximately 40,000 populations. High-quality data will be accessible for secondary analyses, or we can provide experienced data collectors for primary data collection.
       </div>
+
+    
+      <img src={image1} alt="Descriptive Alt Text 1" className="dashboardImage"/>
+      <img src={image2} alt="Descriptive Alt Text 2" className="dashboardImage"/>
+    
       <button onClick={() => navigate('/page3')} className="page3Button">START</button>
 
     </div>
