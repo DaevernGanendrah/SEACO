@@ -414,5 +414,5 @@
 
 /* Positioning the second image next to the first, with some spacing */
 .dashboardImage:last-of-type {
-  left: 50px; /* Position the second image to the right of the first image, adjusting the space */
+  left: 30px; /* Position the second image to the right of the first image, adjusting the space */
 }
