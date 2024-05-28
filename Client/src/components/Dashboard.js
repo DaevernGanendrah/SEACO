@@ -178,10 +178,10 @@ class Dashboard extends React.Component {
             style={index === 0 ? { height: '1000px' } : {}}  // Set height for Census dropdown
           >
 
-              {index === 0 && <HealthChart />}
+              {index === 0 && <CensusChart />}
               {index === 1 && <EconomicActivitiesChart />}
               {index === 2 && <HouseholdChart />}
-              {index === 3 && <CensusChart />}
+              {index === 3 && <HealthChart />}
              
               {index === 4 && (
                 // Content for "People" section goes here
