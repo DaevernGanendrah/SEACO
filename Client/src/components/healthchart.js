@@ -253,7 +253,7 @@ const HealthChart = () => {
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '20px', width: '70%', margin: 'auto' }}>
-      <div style={{ width: '100%', height: '300px' }}>
+      <div style={{ marginBottom: '10%', width: '100%', height: '300px' }}>
         <h2>Percentage of Reported Chronic Diseases</h2>
        <Bubble data={bubbleChartData} options={bubbleChartOptions} />
       </div>
