@@ -179,7 +179,7 @@ const CensusChart = () => {
 
   // Set custom dimensions here directly in the canvas element
   // Adjust the size to smaller dimensions as needed
-  return <canvas ref={chartRef} width="200" height="200" style={{ maxWidth: '70%'}} />;
+  return <canvas ref={chartRef} width="100%" height="100%" style={{ maxWidth: '70%'}} />;
 };
 
 export default CensusChart;
