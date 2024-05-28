@@ -175,7 +175,7 @@ class Dashboard extends React.Component {
             {/* <div className={`accordion-content ${this.state.isVisible[index] ? 'active' : ''}`}> */}
             <div 
             className={`accordion-content ${this.state.isVisible[index] ? 'active' : ''}`}
-            style={index === 0 ? { height: '500px' } : {}}  // Set height for Census dropdown
+            style={index === 0 ? { height: '1000px' } : {}}  // Set height for Census dropdown
           >
 
               {index === 0 && <HealthChart />}
