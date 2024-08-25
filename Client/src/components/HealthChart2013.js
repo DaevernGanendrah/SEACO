@@ -704,7 +704,7 @@ import 'chart.js/auto';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 // import data2013 from '/path/to/full_structured_health_data_complete.json'; // Adjust path as needed
-import data2013 from '../src/full_structured_health_data_complete.json';
+import data2013 from './full_structured_health_data_complete.json';
 import './Dashboard.css'; // Assuming this file exists from the previous step
 
 const HealthChart2013 = () => {
