@@ -142,6 +142,7 @@ import Dashboard from './components/Dashboard';
 import GlobeDashboard from './components/GlobeDashboard';
 import Registration from './components/Registration';
 import Page3 from './components/Page3';
+import HealthChart2013 from './components/HealthChart2013';
 
 const App = () => {
   return (
