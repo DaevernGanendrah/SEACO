@@ -1,0 +1,2006 @@
+{
+    "BEKOK": {
+        "Agreed": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Unwilling": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Not at home": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Incapable due to acute illness": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Incapable due to chronic illness": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Incapable for another reason (included < 5 years old)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Moved": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Passed away": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Total": {
+            "n": 176.0,
+            "percentage": 100.0
+        },
+        "0": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Sex": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Male": {
+            "n": 1087.0,
+            "percentage": 46.0
+        },
+        "Female": {
+            "n": 1278.0,
+            "percentage": 54.0
+        },
+        "Ethnicity": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Malay": {
+            "n": 607.0,
+            "percentage": 25.7
+        },
+        "Chinese": {
+            "n": 1134.0,
+            "percentage": 47.9
+        },
+        "Indian": {
+            "n": 159.0,
+            "percentage": 6.7
+        },
+        "Orang Asli": {
+            "n": 373.0,
+            "percentage": 15.8
+        },
+        "Other": {
+            "n": 8.0,
+            "percentage": 0.5
+        },
+        "Non-citizen": {
+            "n": 66.0,
+            "percentage": 2.8
+        },
+        "Education level": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "No formal education": {
+            "n": 211.0,
+            "percentage": 12.1
+        },
+        "Primary": {
+            "n": 828.0,
+            "percentage": 47.6
+        },
+        "Secondary": {
+            "n": 602.0,
+            "percentage": 34.6
+        },
+        "Tertiary": {
+            "n": 90.0,
+            "percentage": 5.2
+        },
+        "Do not know": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Refused to answer": {
+            "n": 1.0,
+            "percentage": 0.0
+        },
+        "Age group": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "5 to 19": {
+            "n": 692.0,
+            "percentage": 29.3
+        },
+        "20 to 39": {
+            "n": 379.0,
+            "percentage": 16.0
+        },
+        "40 to 59": {
+            "n": 720.0,
+            "percentage": 30.4
+        },
+        "60 and above": {
+            "n": 574.0,
+            "percentage": 24.3
+        },
+        "Employment status last 30 days": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Too young to work": {
+            "n": 64.0,
+            "percentage": 2.7
+        },
+        "Student": {
+            "n": 573.0,
+            "percentage": 24.2
+        },
+        "Housewife / Househusband": {
+            "n": 526.0,
+            "percentage": 22.2
+        },
+        "Not Working": {
+            "n": 269.0,
+            "percentage": 11.4
+        },
+        "Casual Jobs": {
+            "n": 48.0,
+            "percentage": 2.0
+        },
+        "Working Part-time": {
+            "n": 164.0,
+            "percentage": 6.9
+        },
+        "Working Full-Time": {
+            "n": 311.0,
+            "percentage": 13.2
+        },
+        "Do not Know": {
+            "n": 8.0,
+            "percentage": 0.3
+        },
+        "Pensioners/Pensions": {
+            "n": 82.0,
+            "percentage": 3.5
+        },
+        "Self Employed": {
+            "n": 321.0,
+            "percentage": 13.6
+        },
+        "Oral health problems in the last 2 weeks": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Yes": {
+            "n": 150.0,
+            "percentage": 85.2
+        },
+        "No": {
+            "n": 26.0,
+            "percentage": 14.8
+        },
+        "Heart disease": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Asthma": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Stroke": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Arthritis": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Ever had dengue fever": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Dengue in the past 12 months": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "UTI in the past 12 months": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Kidney disease": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Ever smoked": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Age started smoking": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "< 13 ": {
+            "n": 57.0,
+            "percentage": 12.5
+        },
+        "13-": {
+            "n": 181.0,
+            "percentage": 39.6
+        },
+        "18-": {
+            "n": 178.0,
+            "percentage": 38.9
+        },
+        "30-": {
+            "n": 21.0,
+            "percentage": 4.6
+        },
+        "40-": {
+            "n": 20.0,
+            "percentage": 4.4
+        },
+        "BMI categories (WHO) (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "underweight": {
+            "n": 67.0,
+            "percentage": 3.9
+        },
+        "normal": {
+            "n": 438.0,
+            "percentage": 25.7
+        },
+        "overweight": {
+            "n": 602.0,
+            "percentage": 35.4
+        },
+        "obese I": {
+            "n": 510.0,
+            "percentage": 30.0
+        },
+        "obese II": {
+            "n": 60.0,
+            "percentage": 3.5
+        },
+        "obese III": {
+            "n": 25.0,
+            "percentage": 1.5
+        },
+        "BMI categories (WHO) recoded (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "obese": {
+            "n": 319.0,
+            "percentage": 18.7
+        },
+        "BMI categories (Msian CGPO) (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Abdominal obesity (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "(35+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Have been screened for hypertension": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Known hypertensive": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "sbp(last2reads)140above or dbp90": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Hpt population (known + undiagnosed)": {
+            "n": 666.0,
+            "percentage": 0.0
+        },
+        "Taking BP meds": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Have been screened for diabetes mellitus (DM)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Known DM": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "BG >= 11.1 mmol/l": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "DM population (known + undiagnosed)": {
+            "n": 253.0,
+            "percentage": 0.0
+        },
+        "Taking DM meds": {
+            "n": 0.0,
+            "percentage": 0.0
+        }
+    },
+    "CHAAH": {
+        "Agreed": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Unwilling": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Not at home": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Incapable due to acute illness": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Incapable due to chronic illness": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Incapable for another reason (included < 5 years old)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Moved": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Passed away": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Total": {
+            "n": 457.0,
+            "percentage": 100.0
+        },
+        "0": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Sex": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Male": {
+            "n": 2350.0,
+            "percentage": 44.6
+        },
+        "Female": {
+            "n": 2915.0,
+            "percentage": 55.4
+        },
+        "Ethnicity": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Malay": {
+            "n": 1918.0,
+            "percentage": 36.4
+        },
+        "Chinese": {
+            "n": 1480.0,
+            "percentage": 28.1
+        },
+        "Indian": {
+            "n": 1800.0,
+            "percentage": 34.2
+        },
+        "Orang Asli": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Other": {
+            "n": 14.0,
+            "percentage": 0.4
+        },
+        "Non-citizen": {
+            "n": 38.0,
+            "percentage": 0.7
+        },
+        "Education level": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "No formal education": {
+            "n": 284.0,
+            "percentage": 7.2
+        },
+        "Primary": {
+            "n": 1620.0,
+            "percentage": 41.1
+        },
+        "Secondary": {
+            "n": 1723.0,
+            "percentage": 43.7
+        },
+        "Tertiary": {
+            "n": 298.0,
+            "percentage": 7.6
+        },
+        "Do not know": {
+            "n": 1.0,
+            "percentage": 0.0
+        },
+        "Refused to answer": {
+            "n": 1.0,
+            "percentage": 0.0
+        },
+        "Age group": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "5 to 19": {
+            "n": 1479.0,
+            "percentage": 28.1
+        },
+        "20 to 39": {
+            "n": 986.0,
+            "percentage": 18.7
+        },
+        "40 to 59": {
+            "n": 1665.0,
+            "percentage": 31.6
+        },
+        "60 and above": {
+            "n": 1135.0,
+            "percentage": 21.6
+        },
+        "Employment status last 30 days": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Too young to work": {
+            "n": 64.0,
+            "percentage": 1.2
+        },
+        "Student": {
+            "n": 1333.0,
+            "percentage": 25.3
+        },
+        "Housewife / Househusband": {
+            "n": 1162.0,
+            "percentage": 22.1
+        },
+        "Not Working": {
+            "n": 701.0,
+            "percentage": 13.3
+        },
+        "Casual Jobs": {
+            "n": 13.0,
+            "percentage": 0.2
+        },
+        "Working Part-time": {
+            "n": 78.0,
+            "percentage": 1.5
+        },
+        "Working Full-Time": {
+            "n": 1268.0,
+            "percentage": 24.1
+        },
+        "Do not Know": {
+            "n": 15.0,
+            "percentage": 0.3
+        },
+        "Pensioners/Pensions": {
+            "n": 177.0,
+            "percentage": 3.4
+        },
+        "Self Employed": {
+            "n": 438.0,
+            "percentage": 8.3
+        },
+        "Oral health problems in the last 2 weeks": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Yes": {
+            "n": 247.0,
+            "percentage": 54.0
+        },
+        "No": {
+            "n": 210.0,
+            "percentage": 46.0
+        },
+        "Heart disease": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Asthma": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Stroke": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Arthritis": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Ever had dengue fever": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Dengue in the past 12 months": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "UTI in the past 12 months": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Kidney disease": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Ever smoked": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Age started smoking": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "< 13 ": {
+            "n": 41.0,
+            "percentage": 9.1
+        },
+        "13-": {
+            "n": 155.0,
+            "percentage": 34.4
+        },
+        "18-": {
+            "n": 195.0,
+            "percentage": 43.3
+        },
+        "30-": {
+            "n": 23.0,
+            "percentage": 5.1
+        },
+        "40-": {
+            "n": 36.0,
+            "percentage": 8.0
+        },
+        "BMI categories (WHO) (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "underweight": {
+            "n": 148.0,
+            "percentage": 3.9
+        },
+        "normal": {
+            "n": 835.0,
+            "percentage": 21.8
+        },
+        "overweight": {
+            "n": 1374.0,
+            "percentage": 35.8
+        },
+        "obese I": {
+            "n": 1254.0,
+            "percentage": 32.7
+        },
+        "obese II": {
+            "n": 166.0,
+            "percentage": 4.3
+        },
+        "obese III": {
+            "n": 60.0,
+            "percentage": 1.6
+        },
+        "BMI categories (WHO) recoded (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "obese": {
+            "n": 906.0,
+            "percentage": 23.6
+        },
+        "BMI categories (Msian CGPO) (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Abdominal obesity (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "(35+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Have been screened for hypertension": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Known hypertensive": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "sbp(last2reads)140above or dbp90": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Hpt population (known + undiagnosed)": {
+            "n": 1491.0,
+            "percentage": 0.0
+        },
+        "Taking BP meds": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Have been screened for diabetes mellitus (DM)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Known DM": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "BG >= 11.1 mmol/l": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "DM population (known + undiagnosed)": {
+            "n": 674.0,
+            "percentage": 0.0
+        },
+        "Taking DM meds": {
+            "n": 0.0,
+            "percentage": 0.0
+        }
+    },
+    "GEMEREH": {
+        "Agreed": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Unwilling": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Not at home": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Incapable due to acute illness": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Incapable due to chronic illness": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Incapable for another reason (included < 5 years old)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Moved": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Passed away": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Total": {
+            "n": 177.0,
+            "percentage": 100.0
+        },
+        "0": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Sex": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Male": {
+            "n": 1170.0,
+            "percentage": 45.9
+        },
+        "Female": {
+            "n": 1381.0,
+            "percentage": 54.1
+        },
+        "Ethnicity": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Malay": {
+            "n": 2465.0,
+            "percentage": 96.6
+        },
+        "Chinese": {
+            "n": 44.0,
+            "percentage": 1.7
+        },
+        "Indian": {
+            "n": 9.0,
+            "percentage": 0.4
+        },
+        "Orang Asli": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Other": {
+            "n": 6.0,
+            "percentage": 0.3
+        },
+        "Non-citizen": {
+            "n": 15.0,
+            "percentage": 0.6
+        },
+        "Education level": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "No formal education": {
+            "n": 75.0,
+            "percentage": 4.1
+        },
+        "Primary": {
+            "n": 508.0,
+            "percentage": 28.1
+        },
+        "Secondary": {
+            "n": 1044.0,
+            "percentage": 57.6
+        },
+        "Tertiary": {
+            "n": 178.0,
+            "percentage": 9.8
+        },
+        "Do not know": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Refused to answer": {
+            "n": 8.0,
+            "percentage": 0.3
+        },
+        "Age group": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "5 to 19": {
+            "n": 807.0,
+            "percentage": 31.6
+        },
+        "20 to 39": {
+            "n": 468.0,
+            "percentage": 18.3
+        },
+        "40 to 59": {
+            "n": 768.0,
+            "percentage": 30.1
+        },
+        "60 and above": {
+            "n": 508.0,
+            "percentage": 19.9
+        },
+        "Employment status last 30 days": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Too young to work": {
+            "n": 73.0,
+            "percentage": 2.9
+        },
+        "Student": {
+            "n": 686.0,
+            "percentage": 26.9
+        },
+        "Housewife / Househusband": {
+            "n": 600.0,
+            "percentage": 23.5
+        },
+        "Not Working": {
+            "n": 199.0,
+            "percentage": 7.8
+        },
+        "Casual Jobs": {
+            "n": 12.0,
+            "percentage": 0.5
+        },
+        "Working Part-time": {
+            "n": 57.0,
+            "percentage": 2.2
+        },
+        "Working Full-Time": {
+            "n": 444.0,
+            "percentage": 17.4
+        },
+        "Do not Know": {
+            "n": 2.0,
+            "percentage": 0.1
+        },
+        "Pensioners/Pensions": {
+            "n": 146.0,
+            "percentage": 5.7
+        },
+        "Self Employed": {
+            "n": 323.0,
+            "percentage": 12.7
+        },
+        "Oral health problems in the last 2 weeks": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Yes": {
+            "n": 114.0,
+            "percentage": 64.4
+        },
+        "No": {
+            "n": 63.0,
+            "percentage": 35.6
+        },
+        "Heart disease": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Asthma": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Stroke": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Arthritis": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Ever had dengue fever": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Dengue in the past 12 months": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "UTI in the past 12 months": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Kidney disease": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Ever smoked": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Age started smoking": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "< 13 ": {
+            "n": 19.0,
+            "percentage": 5.5
+        },
+        "13-": {
+            "n": 161.0,
+            "percentage": 46.5
+        },
+        "18-": {
+            "n": 113.0,
+            "percentage": 32.7
+        },
+        "30-": {
+            "n": 8.0,
+            "percentage": 2.3
+        },
+        "40-": {
+            "n": 45.0,
+            "percentage": 13.0
+        },
+        "BMI categories (WHO) (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "underweight": {
+            "n": 94.0,
+            "percentage": 5.3
+        },
+        "normal": {
+            "n": 326.0,
+            "percentage": 18.4
+        },
+        "overweight": {
+            "n": 615.0,
+            "percentage": 34.6
+        },
+        "obese I": {
+            "n": 585.0,
+            "percentage": 32.9
+        },
+        "obese II": {
+            "n": 98.0,
+            "percentage": 5.5
+        },
+        "obese III": {
+            "n": 58.0,
+            "percentage": 3.3
+        },
+        "BMI categories (WHO) recoded (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "obese": {
+            "n": 475.0,
+            "percentage": 26.7
+        },
+        "BMI categories (Msian CGPO) (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Abdominal obesity (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "(35+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Have been screened for hypertension": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Known hypertensive": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "sbp(last2reads)140above or dbp90": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Hpt population (known + undiagnosed)": {
+            "n": 626.0,
+            "percentage": 0.0
+        },
+        "Taking BP meds": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Have been screened for diabetes mellitus (DM)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Known DM": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "BG >= 11.1 mmol/l": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "DM population (known + undiagnosed)": {
+            "n": 256.0,
+            "percentage": 0.0
+        },
+        "Taking DM meds": {
+            "n": 0.0,
+            "percentage": 0.0
+        }
+    },
+    "JABI": {
+        "Agreed": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Unwilling": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Not at home": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Incapable due to acute illness": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Incapable due to chronic illness": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Incapable for another reason (included < 5 years old)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Moved": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Passed away": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Total": {
+            "n": 307.0,
+            "percentage": 100.0
+        },
+        "0": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Sex": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Male": {
+            "n": 1957.0,
+            "percentage": 46.7
+        },
+        "Female": {
+            "n": 2232.0,
+            "percentage": 53.3
+        },
+        "Ethnicity": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Malay": {
+            "n": 4022.0,
+            "percentage": 96.0
+        },
+        "Chinese": {
+            "n": 76.0,
+            "percentage": 1.8
+        },
+        "Indian": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Orang Asli": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Other": {
+            "n": 30.0,
+            "percentage": 0.9
+        },
+        "Non-citizen": {
+            "n": 81.0,
+            "percentage": 1.9
+        },
+        "Education level": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "No formal education": {
+            "n": 115.0,
+            "percentage": 3.5
+        },
+        "Primary": {
+            "n": 1544.0,
+            "percentage": 47.5
+        },
+        "Secondary": {
+            "n": 1312.0,
+            "percentage": 40.4
+        },
+        "Tertiary": {
+            "n": 248.0,
+            "percentage": 7.6
+        },
+        "Do not know": {
+            "n": 1.0,
+            "percentage": 0.0
+        },
+        "Refused to answer": {
+            "n": 4.0,
+            "percentage": 0.1
+        },
+        "Age group": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "5 to 19": {
+            "n": 1033.0,
+            "percentage": 24.7
+        },
+        "20 to 39": {
+            "n": 1052.0,
+            "percentage": 25.1
+        },
+        "40 to 59": {
+            "n": 1221.0,
+            "percentage": 29.1
+        },
+        "60 and above": {
+            "n": 883.0,
+            "percentage": 21.1
+        },
+        "Employment status last 30 days": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Too young to work": {
+            "n": 171.0,
+            "percentage": 4.1
+        },
+        "Student": {
+            "n": 822.0,
+            "percentage": 19.6
+        },
+        "Housewife / Househusband": {
+            "n": 1032.0,
+            "percentage": 24.6
+        },
+        "Not Working": {
+            "n": 404.0,
+            "percentage": 9.6
+        },
+        "Casual Jobs": {
+            "n": 58.0,
+            "percentage": 1.4
+        },
+        "Working Part-time": {
+            "n": 132.0,
+            "percentage": 3.2
+        },
+        "Working Full-Time": {
+            "n": 628.0,
+            "percentage": 15.0
+        },
+        "Do not Know": {
+            "n": 1.0,
+            "percentage": 0.0
+        },
+        "Pensioners/Pensions": {
+            "n": 156.0,
+            "percentage": 3.7
+        },
+        "Self Employed": {
+            "n": 776.0,
+            "percentage": 18.5
+        },
+        "Oral health problems in the last 2 weeks": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Yes": {
+            "n": 239.0,
+            "percentage": 77.9
+        },
+        "No": {
+            "n": 68.0,
+            "percentage": 22.1
+        },
+        "Heart disease": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Asthma": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Stroke": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Arthritis": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Ever had dengue fever": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Dengue in the past 12 months": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "UTI in the past 12 months": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Kidney disease": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Ever smoked": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Age started smoking": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "< 13 ": {
+            "n": 51.0,
+            "percentage": 7.5
+        },
+        "13-": {
+            "n": 346.0,
+            "percentage": 51.1
+        },
+        "18-": {
+            "n": 255.0,
+            "percentage": 37.7
+        },
+        "30-": {
+            "n": 12.0,
+            "percentage": 1.8
+        },
+        "40-": {
+            "n": 13.0,
+            "percentage": 1.9
+        },
+        "BMI categories (WHO) (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "underweight": {
+            "n": 125.0,
+            "percentage": 3.9
+        },
+        "normal": {
+            "n": 623.0,
+            "percentage": 19.5
+        },
+        "overweight": {
+            "n": 1121.0,
+            "percentage": 35.1
+        },
+        "obese I": {
+            "n": 1122.0,
+            "percentage": 35.1
+        },
+        "obese II": {
+            "n": 145.0,
+            "percentage": 4.5
+        },
+        "obese III": {
+            "n": 61.0,
+            "percentage": 1.9
+        },
+        "BMI categories (WHO) recoded (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "obese": {
+            "n": 803.0,
+            "percentage": 25.1
+        },
+        "BMI categories (Msian CGPO) (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Abdominal obesity (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "(35+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Have been screened for hypertension": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Known hypertensive": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "sbp(last2reads)140above or dbp90": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Hpt population (known + undiagnosed)": {
+            "n": 1214.0,
+            "percentage": 0.0
+        },
+        "Taking BP meds": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Have been screened for diabetes mellitus (DM)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Known DM": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "BG >= 11.1 mmol/l": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "DM population (known + undiagnosed)": {
+            "n": 425.0,
+            "percentage": 0.0
+        },
+        "Taking DM meds": {
+            "n": 0.0,
+            "percentage": 0.0
+        }
+    },
+    "SUNGAI_SEGAMAT": {
+        "Agreed": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Unwilling": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Not at home": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Incapable due to acute illness": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Incapable due to chronic illness": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Incapable for another reason (included < 5 years old)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Moved": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Passed away": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Total": {
+            "n": 391.0,
+            "percentage": 100.0
+        },
+        "0": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Sex": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Male": {
+            "n": 5014.0,
+            "percentage": 46.5
+        },
+        "Female": {
+            "n": 5777.0,
+            "percentage": 53.5
+        },
+        "Ethnicity": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Malay": {
+            "n": 7325.0,
+            "percentage": 67.9
+        },
+        "Chinese": {
+            "n": 2758.0,
+            "percentage": 25.6
+        },
+        "Indian": {
+            "n": 508.0,
+            "percentage": 4.7
+        },
+        "Orang Asli": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Other": {
+            "n": 109.0,
+            "percentage": 1.4
+        },
+        "Non-citizen": {
+            "n": 143.0,
+            "percentage": 1.3
+        },
+        "Education level": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "No formal education": {
+            "n": 327.0,
+            "percentage": 4.1
+        },
+        "Primary": {
+            "n": 1825.0,
+            "percentage": 23.0
+        },
+        "Secondary": {
+            "n": 4891.0,
+            "percentage": 61.6
+        },
+        "Tertiary": {
+            "n": 786.0,
+            "percentage": 9.9
+        },
+        "Do not know": {
+            "n": 6.0,
+            "percentage": 0.1
+        },
+        "Refused to answer": {
+            "n": 154.0,
+            "percentage": 1.5
+        },
+        "Age group": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "5 to 19": {
+            "n": 3257.0,
+            "percentage": 30.2
+        },
+        "20 to 39": {
+            "n": 2614.0,
+            "percentage": 24.2
+        },
+        "40 to 59": {
+            "n": 3129.0,
+            "percentage": 29.0
+        },
+        "60 and above": {
+            "n": 1791.0,
+            "percentage": 16.6
+        },
+        "Employment status last 30 days": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Too young to work": {
+            "n": 299.0,
+            "percentage": 2.8
+        },
+        "Student": {
+            "n": 2797.0,
+            "percentage": 25.9
+        },
+        "Housewife / Househusband": {
+            "n": 2032.0,
+            "percentage": 18.8
+        },
+        "Not Working": {
+            "n": 844.0,
+            "percentage": 7.8
+        },
+        "Casual Jobs": {
+            "n": 39.0,
+            "percentage": 0.4
+        },
+        "Working Part-time": {
+            "n": 409.0,
+            "percentage": 3.8
+        },
+        "Working Full-Time": {
+            "n": 2818.0,
+            "percentage": 26.1
+        },
+        "Do not Know": {
+            "n": 84.0,
+            "percentage": 0.8
+        },
+        "Pensioners/Pensions": {
+            "n": 444.0,
+            "percentage": 4.1
+        },
+        "Self Employed": {
+            "n": 1037.0,
+            "percentage": 9.6
+        },
+        "Oral health problems in the last 2 weeks": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Yes": {
+            "n": 266.0,
+            "percentage": 68.0
+        },
+        "No": {
+            "n": 125.0,
+            "percentage": 32.0
+        },
+        "Heart disease": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Asthma": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Stroke": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Arthritis": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Ever had dengue fever": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Dengue in the past 12 months": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "UTI in the past 12 months": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Kidney disease": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Ever smoked": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Age started smoking": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "< 13 ": {
+            "n": 55.0,
+            "percentage": 6.6
+        },
+        "13-": {
+            "n": 338.0,
+            "percentage": 40.8
+        },
+        "18-": {
+            "n": 384.0,
+            "percentage": 46.3
+        },
+        "30-": {
+            "n": 28.0,
+            "percentage": 3.4
+        },
+        "40-": {
+            "n": 24.0,
+            "percentage": 2.9
+        },
+        "BMI categories (WHO) (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "underweight": {
+            "n": 413.0,
+            "percentage": 5.3
+        },
+        "normal": {
+            "n": 2446.0,
+            "percentage": 31.3
+        },
+        "overweight": {
+            "n": 2800.0,
+            "percentage": 35.8
+        },
+        "obese I": {
+            "n": 1873.0,
+            "percentage": 23.9
+        },
+        "obese II": {
+            "n": 192.0,
+            "percentage": 2.5
+        },
+        "obese III": {
+            "n": 100.0,
+            "percentage": 1.3
+        },
+        "BMI categories (WHO) recoded (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "obese": {
+            "n": 1221.0,
+            "percentage": 15.6
+        },
+        "BMI categories (Msian CGPO) (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Abdominal obesity (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "(35+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Have been screened for hypertension": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Known hypertensive": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "sbp(last2reads)140above or dbp90": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Hpt population (known + undiagnosed)": {
+            "n": 2085.0,
+            "percentage": 0.0
+        },
+        "Taking BP meds": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Have been screened for diabetes mellitus (DM)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Known DM": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "BG >= 11.1 mmol/l": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "DM population (known + undiagnosed)": {
+            "n": 614.0,
+            "percentage": 0.0
+        },
+        "Taking DM meds": {
+            "n": 0.0,
+            "percentage": 0.0
+        }
+    },
+    "Overall": {
+        "Agreed": {
+            "n": 25161.0,
+            "percentage": 68.7
+        },
+        "Unwilling": {
+            "n": 4726.0,
+            "percentage": 12.9
+        },
+        "Not at home": {
+            "n": 2829.0,
+            "percentage": 7.7
+        },
+        "Incapable due to acute illness": {
+            "n": 42.0,
+            "percentage": 0.1
+        },
+        "Incapable due to chronic illness": {
+            "n": 72.0,
+            "percentage": 0.2
+        },
+        "Incapable for another reason (included < 5 years old)": {
+            "n": 1382.0,
+            "percentage": 3.8
+        },
+        "Moved": {
+            "n": 2239.0,
+            "percentage": 6.1
+        },
+        "Passed away": {
+            "n": 183.0,
+            "percentage": 0.5
+        },
+        "Total": {
+            "n": 1508.0,
+            "percentage": 100.0
+        },
+        "0": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Sex": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Male": {
+            "n": 11578.0,
+            "percentage": 46.0
+        },
+        "Female": {
+            "n": 13583.0,
+            "percentage": 54.0
+        },
+        "Ethnicity": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Malay": {
+            "n": 16337.0,
+            "percentage": 64.9
+        },
+        "Chinese": {
+            "n": 5492.0,
+            "percentage": 21.8
+        },
+        "Indian": {
+            "n": 2476.0,
+            "percentage": 9.8
+        },
+        "Orang Asli": {
+            "n": 373.0,
+            "percentage": 1.5
+        },
+        "Other": {
+            "n": 167.0,
+            "percentage": 0.9
+        },
+        "Non-citizen": {
+            "n": 343.0,
+            "percentage": 1.4
+        },
+        "Education level": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "No formal education": {
+            "n": 1012.0,
+            "percentage": 5.4
+        },
+        "Primary": {
+            "n": 6325.0,
+            "percentage": 33.9
+        },
+        "Secondary": {
+            "n": 9572.0,
+            "percentage": 51.2
+        },
+        "Tertiary": {
+            "n": 1600.0,
+            "percentage": 8.6
+        },
+        "Do not know": {
+            "n": 8.0,
+            "percentage": 0.0
+        },
+        "Refused to answer": {
+            "n": 168.0,
+            "percentage": 0.7
+        },
+        "Age group": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "5 to 19": {
+            "n": 7268.0,
+            "percentage": 28.9
+        },
+        "20 to 39": {
+            "n": 5499.0,
+            "percentage": 21.9
+        },
+        "40 to 59": {
+            "n": 7503.0,
+            "percentage": 29.8
+        },
+        "60 and above": {
+            "n": 4891.0,
+            "percentage": 19.4
+        },
+        "Employment status last 30 days": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Too young to work": {
+            "n": 671.0,
+            "percentage": 2.7
+        },
+        "Student": {
+            "n": 6211.0,
+            "percentage": 24.7
+        },
+        "Housewife / Househusband": {
+            "n": 5352.0,
+            "percentage": 21.3
+        },
+        "Not Working": {
+            "n": 2417.0,
+            "percentage": 9.6
+        },
+        "Casual Jobs": {
+            "n": 170.0,
+            "percentage": 0.7
+        },
+        "Working Part-time": {
+            "n": 840.0,
+            "percentage": 3.3
+        },
+        "Working Full-Time": {
+            "n": 5469.0,
+            "percentage": 21.7
+        },
+        "Do not Know": {
+            "n": 110.0,
+            "percentage": 0.4
+        },
+        "Pensioners/Pensions": {
+            "n": 1005.0,
+            "percentage": 4.0
+        },
+        "Self Employed": {
+            "n": 2895.0,
+            "percentage": 11.5
+        },
+        "Oral health problems in the last 2 weeks": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Yes": {
+            "n": 1016.0,
+            "percentage": 67.4
+        },
+        "No": {
+            "n": 492.0,
+            "percentage": 32.6
+        },
+        "Heart disease": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Asthma": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Stroke": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Arthritis": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Ever had dengue fever": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Dengue in the past 12 months": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "UTI in the past 12 months": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Kidney disease": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Ever smoked": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Age started smoking": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "< 13 ": {
+            "n": 223.0,
+            "percentage": 8.1
+        },
+        "13-": {
+            "n": 1181.0,
+            "percentage": 42.8
+        },
+        "18-": {
+            "n": 1125.0,
+            "percentage": 40.8
+        },
+        "30-": {
+            "n": 92.0,
+            "percentage": 3.3
+        },
+        "40-": {
+            "n": 138.0,
+            "percentage": 5.0
+        },
+        "BMI categories (WHO) (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "underweight": {
+            "n": 847.0,
+            "percentage": 4.6
+        },
+        "normal": {
+            "n": 4668.0,
+            "percentage": 25.5
+        },
+        "overweight": {
+            "n": 6512.0,
+            "percentage": 35.5
+        },
+        "obese I": {
+            "n": 5344.0,
+            "percentage": 29.1
+        },
+        "obese II": {
+            "n": 661.0,
+            "percentage": 3.6
+        },
+        "obese III": {
+            "n": 304.0,
+            "percentage": 1.7
+        },
+        "BMI categories (WHO) recoded (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "obese": {
+            "n": 3724.0,
+            "percentage": 20.3
+        },
+        "BMI categories (Msian CGPO) (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Abdominal obesity (18+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "(35+)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Have been screened for hypertension": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Known hypertensive": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "sbp(last2reads)140above or dbp90": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Hpt population (known + undiagnosed)": {
+            "n": 6082.0,
+            "percentage": 0.0
+        },
+        "Taking BP meds": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Have been screened for diabetes mellitus (DM)": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "Known DM": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "BG >= 11.1 mmol/l": {
+            "n": 0.0,
+            "percentage": 0.0
+        },
+        "DM population (known + undiagnosed)": {
+            "n": 2222.0,
+            "percentage": 0.0
+        },
+        "Taking DM meds": {
+            "n": 0.0,
+            "percentage": 0.0
+        }
+    }
+}
