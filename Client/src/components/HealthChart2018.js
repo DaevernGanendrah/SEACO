@@ -3,7 +3,8 @@ import { Bar, Pie, Line, Doughnut, Radar, PolarArea } from 'react-chartjs-2';
 import 'chart.js/auto';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import data2018 from './full_structured_health_data_2018.json'; // Ensure the file is correctly located
+// import data2018 from './full_structured_health_data_2018.json'; // Ensure the file is correctly located
+import data2018 from './full_structured_health_data_complete.json';
 import './Dashboard.css'; // Assuming the CSS file is the same
 
 const HealthChart2018 = () => {
