@@ -214,11 +214,11 @@ const HealthChart2018 = () => {
           <div id="map2018" style={{ height: '400px', marginBottom: '20px' }}></div>
         </div>
   
-        <div className="charts-container">
+<div className="charts-container">
           {categories.map((category) => {
             const chartData = prepareChartData(category.name);
             if (!chartData) return null;
-  
+
             return (
               <div key={category.name} className="chart">
                 <h3>{category.name}</h3>
