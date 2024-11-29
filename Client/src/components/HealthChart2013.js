@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Bar, Pie } from 'react-chartjs-2';
 import 'chart.js/auto';
@@ -21,7 +20,7 @@ const HealthChart2013 = () => {
     Overall: [2.5147, 102.8151],
   };
 
-  // Fetch data from the backend
+  // Fetch and organize data
   useEffect(() => {
     const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://seaco.onrender.com';
     fetch(`${backendUrl}/api/health/2013`)
@@ -37,21 +36,20 @@ const HealthChart2013 = () => {
         setSubdistrictData(organizedData[selectedSubdistrict]);
       })
       .catch((error) => console.error('Error fetching 2013 data:', error));
-  }, []);
+  }, [selectedSubdistrict]);
 
-  // Update subdistrict data dynamically
+  // Update subdistrict data and map dynamically
   useEffect(() => {
     if (data2013[selectedSubdistrict]) {
       setSubdistrictData(data2013[selectedSubdistrict]);
     }
     if (mapRef.current) {
-      const coordinates =
-        subdistrictCoordinates[selectedSubdistrict] || subdistrictCoordinates.Overall;
+      const coordinates = subdistrictCoordinates[selectedSubdistrict] || subdistrictCoordinates.Overall;
       mapRef.current.setView(coordinates, 14);
     }
-  }, [selectedSubdistrict, data2013]);
+  }, [selectedSubdistrict, data2013, subdistrictCoordinates]);
 
-  // Initialize the map and add markers
+  // Initialize map
   useEffect(() => {
     if (!mapRef.current) {
       mapRef.current = L.map('map2013').setView(subdistrictCoordinates.Overall, 10);
@@ -91,27 +89,18 @@ const HealthChart2013 = () => {
         })
         .catch((error) => console.log('Error loading the GeoJSON data: ' + error));
     }
-  }, []);
+  }, [subdistrictCoordinates]);
 
-  // Map category data for charts
+  // Mapping categories for charts
   const categoryMapping = {
     Sex: ['Male', 'Female'],
     Ethnicity: ['Malay', 'Chinese', 'Indian', 'Orang Asli', 'Other', 'Non-citizen'],
-    'Education level': [
-      'No formal education',
-      'Primary',
-      'Secondary',
-      'Tertiary',
-      'Do not know',
-      'Refused to answer',
-    ],
+    'Education level': ['No formal education', 'Primary', 'Secondary', 'Tertiary', 'Do not know', 'Refused to answer'],
   };
 
-  // Prepare chart data for the selected category
+  // Prepare chart data
   const prepareChartData = (category) => {
-    if (!subdistrictData) {
-      return null;
-    }
+    if (!subdistrictData) return null;
 
     const labels = categoryMapping[category];
     const values = labels.map((label) => subdistrictData[label]?.n || 0);
@@ -160,7 +149,7 @@ const HealthChart2013 = () => {
 
   const categories = [
     { name: 'Sex', chartType: 'pie' },
-    { name: 'Ethnicity', chartType: 'pie' },
+    { name: 'Ethnicity', chartType: 'bar' },
     { name: 'Education level', chartType: 'bar' },
   ];
 
