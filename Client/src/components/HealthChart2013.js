@@ -36,7 +36,7 @@ const HealthChart2013 = () => {
         setSubdistrictData(organizedData[selectedSubdistrict]);
       })
       .catch((error) => console.error('Error fetching 2013 data:', error));
-  }, [selectedSubdistrict]);
+  }, []);
 
   // Update subdistrict data and map dynamically
   useEffect(() => {
@@ -45,9 +45,12 @@ const HealthChart2013 = () => {
     }
     if (mapRef.current) {
       const coordinates = subdistrictCoordinates[selectedSubdistrict] || subdistrictCoordinates.Overall;
-      mapRef.current.setView(coordinates, 14);
+      mapRef.current.setView(coordinates, 14, {
+        animate: true,
+        duration: 0.5,
+      });
     }
-  }, [selectedSubdistrict, data2013, subdistrictCoordinates]);
+  }, [selectedSubdistrict, data2013]);
 
   // Initialize map
   useEffect(() => {
@@ -89,7 +92,7 @@ const HealthChart2013 = () => {
         })
         .catch((error) => console.log('Error loading the GeoJSON data: ' + error));
     }
-  }, [subdistrictCoordinates]);
+  }, []);
 
   // Mapping categories for charts
   const categoryMapping = {
@@ -205,6 +208,7 @@ const HealthChart2013 = () => {
 };
 
 export default HealthChart2013;
+
 
 
 
