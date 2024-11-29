@@ -1,5 +1,5 @@
 const express = require('express');
-const { Health2018, Health2013 } = require('../models/healthModel');
+const { Health2018, Health2013 } = require('../models/healthModels');
 
 const router = express.Router();
 
