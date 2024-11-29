@@ -422,7 +422,7 @@ const HealthChart2013 = () => {
 
   useEffect(() => {
     // Fetch the data from the backend API
-    fetch('/api/health/2013')
+    fetch('https://seaco.onrender.com/api/health/2013')
       .then((response) => response.json())
       .then((data) => {
         // Organize data by subdistricts for easier access
@@ -455,7 +455,7 @@ const HealthChart2013 = () => {
         minZoom: 5,
       }).addTo(mapRef.current);
 
-      fetch('SEACO.geojson')
+      fetch('https://seaco.onrender.com/SEACO.geojson')
         .then((response) => response.json())
         .then((data) => {
           const segamatFeature = data.features.filter(
