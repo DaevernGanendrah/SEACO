@@ -907,60 +907,6 @@ const HealthChart2013 = () => {
       return null;
     }
 
-  //   const labels = categoryMapping[category];
-  //   const values = labels.map((label) => subdistrictData[label]?.n || 0);
-
-  //   return {
-  //     barData: {
-  //       labels: labels,
-  //       datasets: [
-  //         {
-  //           label: `${category} distribution`,
-  //           data: values,
-  //           backgroundColor: 'rgba(75, 192, 192, 0.4)',
-  //           borderColor: 'rgba(75, 192, 192, 0.8)',
-  //           borderWidth: 1,
-  //         },
-  //       ],
-  //     },
-  //     pieData: {
-  //       labels: labels,
-  //       datasets: [
-  //         {
-  //           data: values,
-  //           backgroundColor: [
-  //             'rgba(255, 99, 132, 0.4)',
-  //             'rgba(54, 162, 235, 0.4)',
-  //             'rgba(255, 206, 86, 0.4)',
-  //             'rgba(75, 192, 192, 0.4)',
-  //             'rgba(153, 102, 255, 0.4)',
-  //             'rgba(255, 159, 64, 0.4)',
-  //           ],
-  //           borderColor: [
-  //             'rgba(255, 99, 132, 0.8)',
-  //             'rgba(54, 162, 235, 0.8)',
-  //             'rgba(255, 206, 86, 0.8)',
-  //             'rgba(75, 192, 192, 0.8)',
-  //             'rgba(153, 102, 255, 0.8)',
-  //             'rgba(255, 159, 64, 0.8)',
-  //           ],
-  //           borderWidth: 1,
-  //         },
-  //       ],
-  //     },
-  //   };
-  // };
-
-  // const categories = [
-  //   { name: 'Sex', chartType: 'pie' },
-  //   { name: 'Ethnicity', chartType: 'doughnut' },
-  //   { name: 'Education level', chartType: 'bar' },
-  // ];
-
-
-
-
-
       const categoryMapping = {
     'Sex': ['Male', 'Female'],
     'Ethnicity': ['Malay', 'Chinese', 'Indian', 'Orang Asli', 'Other', 'Non-citizen'],
