@@ -20,23 +20,39 @@ const HealthChart2013 = () => {
     Overall: [2.5147, 102.8151],
   };
 
-  // Fetch and organize data
+  // // Fetch and organize data
+  // useEffect(() => {
+  //   const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://seaco.onrender.com';
+  //   fetch(`${backendUrl}/api/health/2013`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       const organizedData = {};
+  //       data.forEach((item) => {
+  //         if (item._id && item.data) {
+  //           organizedData[item._id] = item.data;
+  //         }
+  //       });
+  //       setData2013(organizedData);
+  //       setSubdistrictData(organizedData[selectedSubdistrict]);
+  //     })
+  //     .catch((error) => console.error('Error fetching 2013 data:', error));
+  // }, []);
+
   useEffect(() => {
-    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://seaco.onrender.com';
-    fetch(`${backendUrl}/api/health/2013`)
-      .then((response) => response.json())
-      .then((data) => {
-        const organizedData = {};
-        data.forEach((item) => {
-          if (item._id && item.data) {
-            organizedData[item._id] = item.data;
-          }
-        });
-        setData2013(organizedData);
-        setSubdistrictData(organizedData[selectedSubdistrict]);
-      })
-      .catch((error) => console.error('Error fetching 2013 data:', error));
-  }, []);
+  const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://seaco.onrender.com';
+  fetch(`${backendUrl}/api/health/2013`)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data && data.length > 0) {
+        const healthData = data[0].subdistricts; // Extract subdistricts data
+        console.log('Fetched Subdistrict Data:', healthData);
+        setData2013(healthData);
+        setSubdistrictData(healthData[selectedSubdistrict]); // Initialize with selected subdistrict
+      }
+    })
+    .catch((error) => console.error('Error fetching 2013 data:', error));
+}, []);
+
 
   // Update subdistrict data and map dynamically
   useEffect(() => {
