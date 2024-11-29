@@ -456,7 +456,46 @@ const HealthChart2013 = () => {
         minZoom: 5,
       }).addTo(mapRef.current);
 
-      fetch('https://seaco.onrender.com/SEACO.geojson')
+  //     fetch('https://seaco.onrender.com/SEACO.geojson')
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         const segamatFeature = data.features.filter(
+  //           (feature) => feature.properties.district === 'Segamat'
+  //         );
+
+  //         L.geoJSON(segamatFeature, {
+  //           style: function () {
+  //             return {
+  //               color: '#FF0000',
+  //               fillColor: '#ffffff',
+  //               fillOpacity: 0.5,
+  //               weight: 2,
+  //             };
+  //           },
+  //         }).addTo(mapRef.current);
+
+  //         Object.keys(subdistrictCoordinates).forEach((subdistrict) => {
+  //           if (subdistrict !== 'Overall') {
+  //             const marker = L.marker(subdistrictCoordinates[subdistrict])
+  //               .addTo(mapRef.current)
+  //               .bindPopup(subdistrict.replace('_', ' '));
+
+  //             marker.on('click', () => {
+  //               setSelectedSubdistrict(subdistrict);
+  //             });
+  //           }
+  //         });
+  //       })
+  //       .catch((error) => {
+  //         console.log('Error loading the GeoJSON data: ' + error);
+  //       });
+  //   }
+  // }, []);
+
+
+
+
+      fetch('SEACO.geojson')
         .then((response) => response.json())
         .then((data) => {
           const segamatFeature = data.features.filter(
@@ -464,10 +503,10 @@ const HealthChart2013 = () => {
           );
 
           L.geoJSON(segamatFeature, {
-            style: function () {
+            style: function (feature) {
               return {
-                color: '#FF0000',
-                fillColor: '#ffffff',
+                color: '#FF0000', 
+                fillColor: '#ffffff', 
                 fillOpacity: 0.5,
                 weight: 2,
               };
@@ -475,7 +514,7 @@ const HealthChart2013 = () => {
           }).addTo(mapRef.current);
 
           Object.keys(subdistrictCoordinates).forEach((subdistrict) => {
-            if (subdistrict !== 'Overall') {
+            if (subdistrict !== "Overall") {
               const marker = L.marker(subdistrictCoordinates[subdistrict])
                 .addTo(mapRef.current)
                 .bindPopup(subdistrict.replace('_', ' '));
@@ -491,7 +530,7 @@ const HealthChart2013 = () => {
         });
     }
   }, []);
-
+  
   const categoryMapping = {
     'Sex': ['Male', 'Female'],
     'Ethnicity': ['Malay', 'Chinese', 'Indian', 'Orang Asli', 'Other', 'Non-citizen'],
