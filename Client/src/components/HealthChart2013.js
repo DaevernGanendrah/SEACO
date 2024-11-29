@@ -21,12 +21,12 @@ const HealthChart2013 = () => {
     Overall: [2.5147, 102.8151],
   };
 
+  // Fetch data from the backend
   useEffect(() => {
-    // Fetch the data from the backend API
-    fetch('/api/health/2013')
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://seaco.onrender.com';
+    fetch(`${backendUrl}/api/health/2013`)
       .then((response) => response.json())
       .then((data) => {
-        // Organize data by subdistricts for easier access
         const organizedData = {};
         data.forEach((item) => {
           if (item._id && item.data) {
@@ -39,12 +39,11 @@ const HealthChart2013 = () => {
       .catch((error) => console.error('Error fetching 2013 data:', error));
   }, []);
 
+  // Update subdistrict data dynamically
   useEffect(() => {
-    // Update the subdistrict data when selected changes
     if (data2013[selectedSubdistrict]) {
       setSubdistrictData(data2013[selectedSubdistrict]);
     }
-    // Update the map view dynamically
     if (mapRef.current) {
       const coordinates =
         subdistrictCoordinates[selectedSubdistrict] || subdistrictCoordinates.Overall;
@@ -52,8 +51,8 @@ const HealthChart2013 = () => {
     }
   }, [selectedSubdistrict, data2013]);
 
+  // Initialize the map and add markers
   useEffect(() => {
-    // Initialize the map
     if (!mapRef.current) {
       mapRef.current = L.map('map2013').setView(subdistrictCoordinates.Overall, 10);
 
@@ -70,13 +69,11 @@ const HealthChart2013 = () => {
           );
 
           L.geoJSON(segamatFeature, {
-            style: function () {
-              return {
-                color: '#FF0000',
-                fillColor: '#ffffff',
-                fillOpacity: 0.5,
-                weight: 2,
-              };
+            style: {
+              color: '#FF0000',
+              fillColor: '#ffffff',
+              fillOpacity: 0.5,
+              weight: 2,
             },
           }).addTo(mapRef.current);
 
@@ -92,67 +89,25 @@ const HealthChart2013 = () => {
             }
           });
         })
-        .catch((error) => {
-          console.log('Error loading the GeoJSON data: ' + error);
-        });
+        .catch((error) => console.log('Error loading the GeoJSON data: ' + error));
     }
   }, []);
 
+  // Map category data for charts
   const categoryMapping = {
     Sex: ['Male', 'Female'],
     Ethnicity: ['Malay', 'Chinese', 'Indian', 'Orang Asli', 'Other', 'Non-citizen'],
-    'Education level': ['No formal education', 'Primary', 'Secondary', 'Tertiary', 'Do not know', 'Refused to answer'],
-  };
-
-  const prepareChartData = (category) => {
-    if (!subdistrictData) {
-      return null;
-    }
-
-      const categoryMapping = {
-    'Sex': ['Male', 'Female'],
-    'Ethnicity': ['Malay', 'Chinese', 'Indian', 'Orang Asli', 'Other', 'Non-citizen'],
-    'Education level': ['No formal education', 'Primary', 'Secondary', 'Tertiary', 'Do not know', 'Refused to answer'],
-    'Age group': ['5 to 19', '20 to 39', '40 to 59', '60 and above'],
-    'Employment status last 30 days': [
-      'Too young to work', 
-      'Student', 
-      'Housewife / Househusband', 
-      'Not Working', 
-      'Casual Jobs', 
-      'Working Part-time', 
-      'Working Full-Time', 
-      'Do not Know', 
-      'Pensioners/Pensions', 
-      'Self Employed'
+    'Education level': [
+      'No formal education',
+      'Primary',
+      'Secondary',
+      'Tertiary',
+      'Do not know',
+      'Refused to answer',
     ],
-    'Oral health problems in the last 2 weeks': ['Yes', 'No'],
-    'Heart disease': ['Yes', 'No', 'Do not Know', 'Refused to answer'],
-    'Asthma': ['Yes', 'No', 'Do not Know', 'Refused to answer'],
-    'Stroke': ['Yes', 'No', 'Do not Know', 'Refused to answer'],
-    'Arthritis': ['Yes', 'No', 'Do not Know', 'Refused to answer'],
-    'Ever had dengue fever': ['Yes', 'No', 'Do not Know', 'Refused to answer'],
-    'Dengue in the past 12 months': ['Yes', 'No', 'Do not Know', 'Refused to answer'],
-    'UTI in the past 12 months': ['Yes', 'No', 'Do not Know', 'Refused to answer'],
-    'Kidney disease': ['Yes', 'No', 'Do not Know', 'Refused to answer'],
-    'Ever smoked': ['Yes', 'No', 'Refused to answer'],
-    'Age started smoking': ['< 13', '13-', '18-', '30-', '40-'],
-    'BMI categories (WHO)(18+)': ['underweight', 'normal', 'overweight', 'obese I', 'obese II', 'obese III'],
-    'BMI categories (WHO) recoded (18+)': ['underweight', 'normal', 'overweight', 'obese'],
-    'BMI categories (Msian CGPO)': ['underweight', 'normal', 'overweight', 'obese I', 'obese II', 'obese III'],
-    'Abdominal obesity (18+)': ['Yes', 'No'],
-    'Have been screened for hypertension': ['Yes', 'No'],
-    'Known hypertensive': ['Yes', 'No'],
-    'sbp(last2reads)140above or dbp90': ['Yes', 'No'],
-    'Hpt population (known + undiagnosed)': ['Yes', 'No'],
-    'Taking BP meds': ['Yes', 'No'],
-    'Have been screened for diabetes mellitus (DM)': ['Yes', 'No'],
-    'Known DM': ['Yes', 'No'],
-    'BG >= 11.1 mmol/l': ['Yes', 'No'],
-    'DM population (known + undiagnosed)': ['Yes', 'No'],
-    'Taking DM meds': ['Yes', 'No'],
   };
 
+  // Prepare chart data for the selected category
   const prepareChartData = (category) => {
     if (!subdistrictData) {
       return null;
@@ -164,7 +119,7 @@ const HealthChart2013 = () => {
 
     return {
       barData: {
-        labels: labels,
+        labels,
         datasets: [
           {
             label: `${category} distribution`,
@@ -176,88 +131,10 @@ const HealthChart2013 = () => {
         ],
       },
       pieData: {
-        labels: labels,
+        labels,
         datasets: [
           {
             data: percentages,
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.4)',
-              'rgba(54, 162, 235, 0.4)',
-              'rgba(255, 206, 86, 0.4)',
-              'rgba(75, 192, 192, 0.4)',
-              'rgba(153, 102, 255, 0.4)',
-              'rgba(255, 159, 64, 0.4)',
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 0.8)',
-              'rgba(54, 162, 235, 0.8)',
-              'rgba(255, 206, 86, 0.8)',
-              'rgba(75, 192, 192, 0.8)',
-              'rgba(153, 102, 255, 0.8)',
-              'rgba(255, 159, 64, 0.8)',
-            ],
-            borderWidth: 1,
-          },
-        ],
-      },
-      lineData: {
-        labels: labels,
-        datasets: [
-          {
-            label: `${category} over years`,
-            data: values,
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 0.8)',
-            borderWidth: 2,
-            fill: true,
-          },
-        ],
-      },
-      doughnutData: {
-        labels: labels,
-        datasets: [
-          {
-            data: values,
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.4)',
-              'rgba(54, 162, 235, 0.4)',
-              'rgba(255, 206, 86, 0.4)',
-              'rgba(75, 192, 192, 0.4)',
-              'rgba(153, 102, 255, 0.4)',
-              'rgba(255, 159, 64, 0.4)',
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 0.8)',
-              'rgba(54, 162, 235, 0.8)',
-              'rgba(255, 206, 86, 0.8)',
-              'rgba(75, 192, 192, 0.8)',
-              'rgba(153, 102, 255, 0.8)',
-              'rgba(255, 159, 64, 0.8)',
-            ],
-            borderWidth: 1,
-          },
-        ],
-      },
-      radarData: {
-        labels: labels,
-        datasets: [
-          {
-            label: `${category} status`,
-            data: values,
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            borderColor: 'rgba(255, 99, 132, 0.8)',
-            pointBackgroundColor: 'rgba(255, 99, 132, 0.8)',
-            pointBorderColor: '#fff',
-            pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: 'rgba(255, 99, 132, 0.8)',
-          },
-        ],
-      },
-      polarAreaData: {
-        labels: labels,
-        datasets: [
-          {
-            data: values,
             backgroundColor: [
               'rgba(255, 99, 132, 0.4)',
               'rgba(54, 162, 235, 0.4)',
@@ -283,37 +160,9 @@ const HealthChart2013 = () => {
 
   const categories = [
     { name: 'Sex', chartType: 'pie' },
-    { name: 'Ethnicity', chartType: 'doughnut' },
+    { name: 'Ethnicity', chartType: 'pie' },
     { name: 'Education level', chartType: 'bar' },
-    { name: 'Age group', chartType: 'line' },
-    { name: 'Employment status last 30 days', chartType: 'polarArea' },
-    { name: 'Oral health problems in the last 2 weeks', chartType: 'pie' },
-    { name: 'Heart disease', chartType: 'bar' },
-    { name: 'Asthma', chartType: 'bar' },
-    { name: 'Stroke', chartType: 'bar' },
-    { name: 'Arthritis', chartType: 'radar' },
-    { name: 'Ever had dengue fever', chartType: 'pie' },
-    { name: 'Dengue in the past 12 months', chartType: 'pie' },
-    { name: 'UTI in the past 12 months', chartType: 'bar' },
-    { name: 'Kidney disease', chartType: 'bar' },
-    { name: 'Ever smoked', chartType: 'pie' },
-    { name: 'Age started smoking', chartType: 'bar' },
-    { name: 'BMI categories (WHO)(18+)', chartType: 'bar' },
-    { name: 'BMI categories (WHO) recoded (18+)', chartType: 'bar' },
-    { name: 'BMI categories (Msian CGPO)', chartType: 'bar' },
-    { name: 'Abdominal obesity (18+)', chartType: 'pie' },
-    { name: 'Have been screened for hypertension', chartType: 'bar' },
-    { name: 'Known hypertensive', chartType: 'pie' },
-    { name: 'sbp(last2reads)140above or dbp90', chartType: 'bar' },
-    { name: 'Hpt population (known + undiagnosed)', chartType: 'bar' },
-    { name: 'Taking BP meds', chartType: 'pie' },
-    { name: 'Have been screened for diabetes mellitus (DM)', chartType: 'bar' },
-    { name: 'Known DM', chartType: 'pie' },
-    { name: 'BG >= 11.1 mmol/l', chartType: 'pie' },
-    { name: 'DM population (known + undiagnosed)', chartType: 'bar' },
-    { name: 'Taking DM meds', chartType: 'pie' },
   ];
-
 
   return (
     <div className="dashboard-container">
@@ -367,7 +216,6 @@ const HealthChart2013 = () => {
 };
 
 export default HealthChart2013;
-
 
 
 
