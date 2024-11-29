@@ -7,22 +7,22 @@ const router = express.Router();
 const router = express.Router();
 
 
-router.post('/register', async (req, res) => {
-    try {
-      const { username, password } = req.body;
-      const hashedPassword = await bcrypt.hash(password, 12);
+// router.post('/register', async (req, res) => {
+//     try {
+//       const { username, password } = req.body;
+//       const hashedPassword = await bcrypt.hash(password, 12);
       
-      const newUser = new User({
-        username,
-        password: hashedPassword,
-      });
+//       const newUser = new User({
+//         username,
+//         password: hashedPassword,
+//       });
       
-      const savedUser = await newUser.save();
-      res.status(201).json(savedUser);
-    } catch (error) {
-      res.status(500).json({ message: 'Error registering new user', error: error });
-    }
-  });
+//       const savedUser = await newUser.save();
+//       res.status(201).json(savedUser);
+//     } catch (error) {
+//       res.status(500).json({ message: 'Error registering new user', error: error });
+//     }
+//   });
 
 
 // // Login endpoint
@@ -149,4 +149,4 @@ module.exports = router;
 //     }
 //   });
 
-module.exports = router;
+// module.exports = router;
