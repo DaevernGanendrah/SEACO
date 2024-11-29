@@ -840,41 +840,6 @@ export default HealthChart2013;
 //         minZoom: 5,
 //       }).addTo(mapRef.current);
 
-//   //     fetch('https://seaco.onrender.com/SEACO.geojson')
-//   //       .then((response) => response.json())
-//   //       .then((data) => {
-//   //         const segamatFeature = data.features.filter(
-//   //           (feature) => feature.properties.district === 'Segamat'
-//   //         );
-
-//   //         L.geoJSON(segamatFeature, {
-//   //           style: function () {
-//   //             return {
-//   //               color: '#FF0000',
-//   //               fillColor: '#ffffff',
-//   //               fillOpacity: 0.5,
-//   //               weight: 2,
-//   //             };
-//   //           },
-//   //         }).addTo(mapRef.current);
-
-//   //         Object.keys(subdistrictCoordinates).forEach((subdistrict) => {
-//   //           if (subdistrict !== 'Overall') {
-//   //             const marker = L.marker(subdistrictCoordinates[subdistrict])
-//   //               .addTo(mapRef.current)
-//   //               .bindPopup(subdistrict.replace('_', ' '));
-
-//   //             marker.on('click', () => {
-//   //               setSelectedSubdistrict(subdistrict);
-//   //             });
-//   //           }
-//   //         });
-//   //       })
-//   //       .catch((error) => {
-//   //         console.log('Error loading the GeoJSON data: ' + error);
-//   //       });
-//   //   }
-//   // }, []);
 
 
 
