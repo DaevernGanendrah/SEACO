@@ -54,19 +54,32 @@ const HealthChart2013 = () => {
 }, []);
 
 
-  // Update subdistrict data and map dynamically
+  // // Update subdistrict data and map dynamically
+  // useEffect(() => {
+  //   if (data2013[selectedSubdistrict]) {
+  //     setSubdistrictData(data2013[selectedSubdistrict]);
+  //   }
+  //   if (mapRef.current) {
+  //     const coordinates = subdistrictCoordinates[selectedSubdistrict] || subdistrictCoordinates.Overall;
+  //     mapRef.current.setView(coordinates, 14, {
+  //       animate: true,
+  //       duration: 0.5,
+  //     });
+  //   }
+  // }, [selectedSubdistrict, data2013]);
+
   useEffect(() => {
-    if (data2013[selectedSubdistrict]) {
-      setSubdistrictData(data2013[selectedSubdistrict]);
-    }
-    if (mapRef.current) {
-      const coordinates = subdistrictCoordinates[selectedSubdistrict] || subdistrictCoordinates.Overall;
-      mapRef.current.setView(coordinates, 14, {
-        animate: true,
-        duration: 0.5,
-      });
-    }
-  }, [selectedSubdistrict, data2013]);
+  if (data2013[selectedSubdistrict]) {
+    setSubdistrictData(data2013[selectedSubdistrict]);
+  }
+  if (mapRef.current) {
+    const coordinates = subdistrictCoordinates[selectedSubdistrict] || subdistrictCoordinates.Overall;
+    mapRef.current.setView(coordinates, 14, {
+      animate: true,
+      duration: 0.5,
+    });
+  }
+}, [selectedSubdistrict, data2013]);
 
   // Initialize map
   useEffect(() => {
@@ -222,133 +235,191 @@ const HealthChart2013 = () => {
     'Taking DM meds': ['Yes', 'No'],
   };
 
+
+
+
+
+
   const prepareChartData = (category) => {
-    if (!subdistrictData) {
-      return null;
-    }
+  if (!subdistrictData) {
+    console.warn('No Subdistrict Data Available:', subdistrictData);
+    return null;
+  }
 
-    const labels = categoryMapping[category];
-    const values = labels.map((label) => subdistrictData[label]?.n || 0);
-    const percentages = labels.map((label) => subdistrictData[label]?.percentage || 0);
+  const labels = categoryMapping[category];
+  const values = labels.map((label) => subdistrictData[label]?.n || 0);
+  const percentages = labels.map((label) => subdistrictData[label]?.percentage || 0);
 
-    return {
-      barData: {
-        labels: labels,
-        datasets: [
-          {
-            label: `${category} distribution`,
-            data: values,
-            backgroundColor: 'rgba(75, 192, 192, 0.4)',
-            borderColor: 'rgba(75, 192, 192, 0.8)',
-            borderWidth: 1,
-          },
-        ],
-      },
-      pieData: {
-        labels: labels,
-        datasets: [
-          {
-            data: percentages,
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.4)',
-              'rgba(54, 162, 235, 0.4)',
-              'rgba(255, 206, 86, 0.4)',
-              'rgba(75, 192, 192, 0.4)',
-              'rgba(153, 102, 255, 0.4)',
-              'rgba(255, 159, 64, 0.4)',
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 0.8)',
-              'rgba(54, 162, 235, 0.8)',
-              'rgba(255, 206, 86, 0.8)',
-              'rgba(75, 192, 192, 0.8)',
-              'rgba(153, 102, 255, 0.8)',
-              'rgba(255, 159, 64, 0.8)',
-            ],
-            borderWidth: 1,
-          },
-        ],
-      },
-      lineData: {
-        labels: labels,
-        datasets: [
-          {
-            label: `${category} over years`,
-            data: values,
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 0.8)',
-            borderWidth: 2,
-            fill: true,
-          },
-        ],
-      },
-      doughnutData: {
-        labels: labels,
-        datasets: [
-          {
-            data: values,
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.4)',
-              'rgba(54, 162, 235, 0.4)',
-              'rgba(255, 206, 86, 0.4)',
-              'rgba(75, 192, 192, 0.4)',
-              'rgba(153, 102, 255, 0.4)',
-              'rgba(255, 159, 64, 0.4)',
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 0.8)',
-              'rgba(54, 162, 235, 0.8)',
-              'rgba(255, 206, 86, 0.8)',
-              'rgba(75, 192, 192, 0.8)',
-              'rgba(153, 102, 255, 0.8)',
-              'rgba(255, 159, 64, 0.8)',
-            ],
-            borderWidth: 1,
-          },
-        ],
-      },
-      radarData: {
-        labels: labels,
-        datasets: [
-          {
-            label: `${category} status`,
-            data: values,
-            backgroundColor: 'rgba(255, 99, 132, 0.2)',
-            borderColor: 'rgba(255, 99, 132, 0.8)',
-            pointBackgroundColor: 'rgba(255, 99, 132, 0.8)',
-            pointBorderColor: '#fff',
-            pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: 'rgba(255, 99, 132, 0.8)',
-          },
-        ],
-      },
-      polarAreaData: {
-        labels: labels,
-        datasets: [
-          {
-            data: values,
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.4)',
-              'rgba(54, 162, 235, 0.4)',
-              'rgba(255, 206, 86, 0.4)',
-              'rgba(75, 192, 192, 0.4)',
-              'rgba(153, 102, 255, 0.4)',
-              'rgba(255, 159, 64, 0.4)',
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 0.8)',
-              'rgba(54, 162, 235, 0.8)',
-              'rgba(255, 206, 86, 0.8)',
-              'rgba(75, 192, 192, 0.8)',
-              'rgba(153, 102, 255, 0.8)',
-              'rgba(255, 159, 64, 0.8)',
-            ],
-            borderWidth: 1,
-          },
-        ],
-      },
-    };
+  console.log(`Prepared Chart Data for ${category}:`, { labels, values, percentages });
+
+  return {
+    barData: {
+      labels,
+      datasets: [
+        {
+          label: `${category} distribution`,
+          data: values,
+          backgroundColor: 'rgba(75, 192, 192, 0.4)',
+          borderColor: 'rgba(75, 192, 192, 0.8)',
+          borderWidth: 1,
+        },
+      ],
+    },
+    pieData: {
+      labels,
+      datasets: [
+        {
+          data: percentages,
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.4)',
+            'rgba(54, 162, 235, 0.4)',
+            'rgba(255, 206, 86, 0.4)',
+            'rgba(75, 192, 192, 0.4)',
+            'rgba(153, 102, 255, 0.4)',
+            'rgba(255, 159, 64, 0.4)',
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 0.8)',
+            'rgba(54, 162, 235, 0.8)',
+            'rgba(255, 206, 86, 0.8)',
+            'rgba(75, 192, 192, 0.8)',
+            'rgba(153, 102, 255, 0.8)',
+            'rgba(255, 159, 64, 0.8)',
+          ],
+          borderWidth: 1,
+        },
+      ],
+    },
   };
+};
+
+  // const prepareChartData = (category) => {
+  //   if (!subdistrictData) {
+  //     return null;
+  //   }
+
+  //   const labels = categoryMapping[category];
+  //   const values = labels.map((label) => subdistrictData[label]?.n || 0);
+  //   const percentages = labels.map((label) => subdistrictData[label]?.percentage || 0);
+
+  //   return {
+  //     barData: {
+  //       labels: labels,
+  //       datasets: [
+  //         {
+  //           label: `${category} distribution`,
+  //           data: values,
+  //           backgroundColor: 'rgba(75, 192, 192, 0.4)',
+  //           borderColor: 'rgba(75, 192, 192, 0.8)',
+  //           borderWidth: 1,
+  //         },
+  //       ],
+  //     },
+  //     pieData: {
+  //       labels: labels,
+  //       datasets: [
+  //         {
+  //           data: percentages,
+  //           backgroundColor: [
+  //             'rgba(255, 99, 132, 0.4)',
+  //             'rgba(54, 162, 235, 0.4)',
+  //             'rgba(255, 206, 86, 0.4)',
+  //             'rgba(75, 192, 192, 0.4)',
+  //             'rgba(153, 102, 255, 0.4)',
+  //             'rgba(255, 159, 64, 0.4)',
+  //           ],
+  //           borderColor: [
+  //             'rgba(255, 99, 132, 0.8)',
+  //             'rgba(54, 162, 235, 0.8)',
+  //             'rgba(255, 206, 86, 0.8)',
+  //             'rgba(75, 192, 192, 0.8)',
+  //             'rgba(153, 102, 255, 0.8)',
+  //             'rgba(255, 159, 64, 0.8)',
+  //           ],
+  //           borderWidth: 1,
+  //         },
+  //       ],
+  //     },
+  //     lineData: {
+  //       labels: labels,
+  //       datasets: [
+  //         {
+  //           label: `${category} over years`,
+  //           data: values,
+  //           backgroundColor: 'rgba(75, 192, 192, 0.2)',
+  //           borderColor: 'rgba(75, 192, 192, 0.8)',
+  //           borderWidth: 2,
+  //           fill: true,
+  //         },
+  //       ],
+  //     },
+  //     doughnutData: {
+  //       labels: labels,
+  //       datasets: [
+  //         {
+  //           data: values,
+  //           backgroundColor: [
+  //             'rgba(255, 99, 132, 0.4)',
+  //             'rgba(54, 162, 235, 0.4)',
+  //             'rgba(255, 206, 86, 0.4)',
+  //             'rgba(75, 192, 192, 0.4)',
+  //             'rgba(153, 102, 255, 0.4)',
+  //             'rgba(255, 159, 64, 0.4)',
+  //           ],
+  //           borderColor: [
+  //             'rgba(255, 99, 132, 0.8)',
+  //             'rgba(54, 162, 235, 0.8)',
+  //             'rgba(255, 206, 86, 0.8)',
+  //             'rgba(75, 192, 192, 0.8)',
+  //             'rgba(153, 102, 255, 0.8)',
+  //             'rgba(255, 159, 64, 0.8)',
+  //           ],
+  //           borderWidth: 1,
+  //         },
+  //       ],
+  //     },
+  //     radarData: {
+  //       labels: labels,
+  //       datasets: [
+  //         {
+  //           label: `${category} status`,
+  //           data: values,
+  //           backgroundColor: 'rgba(255, 99, 132, 0.2)',
+  //           borderColor: 'rgba(255, 99, 132, 0.8)',
+  //           pointBackgroundColor: 'rgba(255, 99, 132, 0.8)',
+  //           pointBorderColor: '#fff',
+  //           pointHoverBackgroundColor: '#fff',
+  //           pointHoverBorderColor: 'rgba(255, 99, 132, 0.8)',
+  //         },
+  //       ],
+  //     },
+  //     polarAreaData: {
+  //       labels: labels,
+  //       datasets: [
+  //         {
+  //           data: values,
+  //           backgroundColor: [
+  //             'rgba(255, 99, 132, 0.4)',
+  //             'rgba(54, 162, 235, 0.4)',
+  //             'rgba(255, 206, 86, 0.4)',
+  //             'rgba(75, 192, 192, 0.4)',
+  //             'rgba(153, 102, 255, 0.4)',
+  //             'rgba(255, 159, 64, 0.4)',
+  //           ],
+  //           borderColor: [
+  //             'rgba(255, 99, 132, 0.8)',
+  //             'rgba(54, 162, 235, 0.8)',
+  //             'rgba(255, 206, 86, 0.8)',
+  //             'rgba(75, 192, 192, 0.8)',
+  //             'rgba(153, 102, 255, 0.8)',
+  //             'rgba(255, 159, 64, 0.8)',
+  //           ],
+  //           borderWidth: 1,
+  //         },
+  //       ],
+  //     },
+  //   };
+  // };
 
   const categories = [
     { name: 'Sex', chartType: 'pie' },
