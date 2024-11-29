@@ -422,7 +422,8 @@ const HealthChart2013 = () => {
 
   useEffect(() => {
     // Fetch the data from the backend API
-    fetch('https://seaco.onrender.com/api/health/2013')
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://seaco.onrender.com';
+    fetch(`${backendUrl}/api/health/2013`)
       .then((response) => response.json())
       .then((data) => {
         // Organize data by subdistricts for easier access
