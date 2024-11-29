@@ -457,7 +457,7 @@ const HealthChart2018 = () => {
         minZoom: 5,
       }).addTo(mapRef.current);
 
-      fetch('https://seaco.onrender.com/SEACO.geojson')
+          fetch('SEACO.geojson')
         .then((response) => response.json())
         .then((data) => {
           const segamatFeature = data.features.filter(
@@ -465,10 +465,10 @@ const HealthChart2018 = () => {
           );
 
           L.geoJSON(segamatFeature, {
-            style: function () {
+            style: function (feature) {
               return {
-                color: '#FF0000',
-                fillColor: '#ffffff',
+                color: '#FF0000', 
+                fillColor: '#ffffff', 
                 fillOpacity: 0.5,
                 weight: 2,
               };
@@ -476,7 +476,7 @@ const HealthChart2018 = () => {
           }).addTo(mapRef.current);
 
           Object.keys(subdistrictCoordinates).forEach((subdistrict) => {
-            if (subdistrict !== 'Overall') {
+            if (subdistrict !== "Overall") {
               const marker = L.marker(subdistrictCoordinates[subdistrict])
                 .addTo(mapRef.current)
                 .bindPopup(subdistrict.replace('_', ' '));
