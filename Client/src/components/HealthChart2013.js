@@ -22,25 +22,39 @@ const HealthChart2013 = () => {
 
   useEffect(() => {
     const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://seaco.onrender.com';
+    console.log('Backend URL:', backendUrl); // Log the backend URL
+
     fetch(`${backendUrl}/api/health/2013`)
-      .then((response) => response.json())
+      .then((response) => {
+        console.log('API Response Status:', response.status); // Log response status
+        return response.json();
+      })
       .then((data) => {
+        console.log('API Response Data:', data); // Log the raw response data
         if (data && data.length > 0) {
-          const healthData = data[0]; // Access the top-level data object
-          console.log('Fetched Health Data:', healthData);
+          const healthData = data[0]?.subdistricts;
+          console.log('Parsed Health Data:', healthData); // Log the parsed health data
           setData2013(healthData);
-          setSubdistrictData(healthData[selectedSubdistrict]); // Set default subdistrict data
+          setSubdistrictData(healthData[selectedSubdistrict]);
+        } else {
+          console.warn('No data returned from API');
         }
       })
       .catch((error) => console.error('Error fetching 2013 data:', error));
   }, []);
 
   useEffect(() => {
+    console.log('Selected Subdistrict:', selectedSubdistrict); // Log the selected subdistrict
     if (data2013[selectedSubdistrict]) {
+      console.log('Data for Selected Subdistrict:', data2013[selectedSubdistrict]); // Log subdistrict data
       setSubdistrictData(data2013[selectedSubdistrict]);
+    } else {
+      console.warn(`No data found for subdistrict: ${selectedSubdistrict}`);
     }
+
     if (mapRef.current) {
       const coordinates = subdistrictCoordinates[selectedSubdistrict] || subdistrictCoordinates.Overall;
+      console.log('Map Coordinates for Subdistrict:', coordinates); // Log coordinates
       mapRef.current.setView(coordinates, 14, {
         animate: true,
         duration: 0.5,
@@ -50,6 +64,7 @@ const HealthChart2013 = () => {
 
   useEffect(() => {
     if (!mapRef.current) {
+      console.log('Initializing Map'); // Log map initialization
       mapRef.current = L.map('map2013').setView(subdistrictCoordinates.Overall, 10);
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -60,6 +75,7 @@ const HealthChart2013 = () => {
       fetch('SEACO.geojson')
         .then((response) => response.json())
         .then((data) => {
+          console.log('Loaded GeoJSON Data:', data); // Log GeoJSON data
           const segamatFeature = data.features.filter(
             (feature) => feature.properties.district === 'Segamat'
           );
@@ -80,12 +96,13 @@ const HealthChart2013 = () => {
                 .bindPopup(subdistrict.replace('_', ' '));
 
               marker.on('click', () => {
+                console.log('Marker Clicked:', subdistrict); // Log marker click
                 setSelectedSubdistrict(subdistrict);
               });
             }
           });
         })
-        .catch((error) => console.log('Error loading the GeoJSON data: ' + error));
+        .catch((error) => console.log('Error loading GeoJSON data:', error));
     }
   }, []);
 
@@ -96,8 +113,9 @@ const HealthChart2013 = () => {
   };
 
   const prepareChartData = (category) => {
+    console.log('Preparing Chart Data for Category:', category); // Log category
     if (!subdistrictData) {
-      console.warn('No Subdistrict Data Available:', subdistrictData);
+      console.warn('No Subdistrict Data Available for Chart Preparation');
       return null;
     }
 
@@ -105,7 +123,7 @@ const HealthChart2013 = () => {
     const values = labels.map((label) => subdistrictData[label]?.n || 0);
     const percentages = labels.map((label) => subdistrictData[label]?.percentage || 0);
 
-    console.log(`Prepared Chart Data for ${category}:`, { labels, values, percentages });
+    console.log(`Chart Data for ${category}:`, { labels, values, percentages });
 
     return {
       barData: {
@@ -183,6 +201,7 @@ const HealthChart2013 = () => {
         <div className="charts-container">
           {categories.map((category) => {
             const chartData = prepareChartData(category.name);
+            console.log('Chart Data Prepared:', chartData); // Log chart data
             if (!chartData) return null;
 
             return (
