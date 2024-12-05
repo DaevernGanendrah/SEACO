@@ -31,7 +31,7 @@ const HealthChart2013 = () => {
   // Initialize Chart
   useEffect(() => {
     if (chartData && !loading) {
-      const ctx = document.getElementById("healthChart2013").getContext("2d");
+      const ctx = document.getElementById("Health2013").getContext("2d");
 
       // Create a bar chart
       new Chart(ctx, {
