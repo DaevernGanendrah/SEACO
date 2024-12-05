@@ -1,224 +1,110 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Bar, Pie } from 'react-chartjs-2';
-import 'chart.js/auto';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-import './Dashboard.css';
+import React, { useEffect, useState } from "react";
+import Chart from "chart.js/auto";
 
 const HealthChart2013 = () => {
-  const [selectedSubdistrict, setSelectedSubdistrict] = useState('BEKOK');
-  const [data2013, setData2013] = useState({});
-  const [subdistrictData, setSubdistrictData] = useState(null);
-  const mapRef = useRef(null);
-
-  const subdistrictCoordinates = {
-    BEKOK: [2.3869, 103.0544],
-    CHAAH: [2.2384, 103.0573],
-    GEMEREH: [2.5048, 102.8093],
-    JABI: [2.5085, 102.8193],
-    SUNGAI_SEGAMAT: [2.4873, 102.8212],
-    Overall: [2.5147, 102.8151],
-  };
+  const [chartData, setChartData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://seaco.onrender.com';
-    console.log('Backend URL:', backendUrl);
-
-    fetch(`${backendUrl}/api/health/2013`)
-      .then((response) => {
-        console.log('API Response Status:', response.status);
+    // Fetch data from the backend
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch("https://seaco.onrender.com/api/health/2013");
         if (!response.ok) {
-          throw new Error(`Failed to fetch data: ${response.statusText}`);
+          throw new Error(`API Response Status: ${response.status}`);
         }
-        return response.json();
-      })
-      .then((data) => {
-        console.log('API Response Data:', data);
-        if (data) {
-          setData2013(data); // Set entire data object
-          setSubdistrictData(data[selectedSubdistrict]); // Set default subdistrict data
-        } else {
-          console.warn('No data returned from API');
-        }
-      })
-      .catch((error) => console.error('Error fetching 2013 data:', error));
+        const data = await response.json();
+        setChartData(data);
+        setLoading(false);
+      } catch (err) {
+        console.error("Error fetching data:", err);
+        setError(err.message || "Failed to fetch data");
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, []);
 
+  // Initialize Chart
   useEffect(() => {
-    console.log('Selected Subdistrict:', selectedSubdistrict);
-    if (data2013[selectedSubdistrict]) {
-      console.log('Data for Selected Subdistrict:', data2013[selectedSubdistrict]);
-      setSubdistrictData(data2013[selectedSubdistrict]);
-    } else {
-      console.warn(`No data found for subdistrict: ${selectedSubdistrict}`);
-    }
+    if (chartData && !loading) {
+      const ctx = document.getElementById("healthChart2013").getContext("2d");
 
-    if (mapRef.current) {
-      const coordinates = subdistrictCoordinates[selectedSubdistrict] || subdistrictCoordinates.Overall;
-      console.log('Map Coordinates for Subdistrict:', coordinates);
-      mapRef.current.setView(coordinates, 14, {
-        animate: true,
-        duration: 0.5,
+      // Create a bar chart
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: chartData.map((item) => item.subdistrict), // X-axis labels
+          datasets: [
+            {
+              label: "Agreed (%)",
+              data: chartData.map((item) => item.agreed),
+              backgroundColor: "rgba(75, 192, 192, 0.6)"
+            },
+            {
+              label: "Unwilling (%)",
+              data: chartData.map((item) => item.unwilling),
+              backgroundColor: "rgba(255, 99, 132, 0.6)"
+            },
+            {
+              label: "Moved (%)",
+              data: chartData.map((item) => item.moved),
+              backgroundColor: "rgba(255, 206, 86, 0.6)"
+            },
+            {
+              label: "Passed Away (%)",
+              data: chartData.map((item) => item.passedAway),
+              backgroundColor: "rgba(54, 162, 235, 0.6)"
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: "top"
+            },
+            title: {
+              display: true,
+              text: "Health Data for 2013"
+            }
+          },
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: "Subdistricts"
+              }
+            },
+            y: {
+              title: {
+                display: true,
+                text: "Percentage"
+              },
+              beginAtZero: true
+            }
+          }
+        }
       });
     }
-  }, [selectedSubdistrict, data2013]);
+  }, [chartData, loading]);
 
-  useEffect(() => {
-    if (!mapRef.current) {
-      console.log('Initializing Map');
-      mapRef.current = L.map('map2013').setView(subdistrictCoordinates.Overall, 10);
-
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 18,
-        minZoom: 5,
-      }).addTo(mapRef.current);
-
-      fetch('/SEACO.geojson')
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`Failed to fetch GeoJSON: ${response.statusText}`);
-          }
-          return response.json();
-        })
-        .then((data) => {
-          console.log('Loaded GeoJSON Data:', data);
-          const segamatFeature = data.features.filter(
-            (feature) => feature.properties.district === 'Segamat'
-          );
-
-          L.geoJSON(segamatFeature, {
-            style: {
-              color: '#FF0000',
-              fillColor: '#ffffff',
-              fillOpacity: 0.5,
-              weight: 2,
-            },
-          }).addTo(mapRef.current);
-        })
-        .catch((error) => console.error('Error loading GeoJSON data:', error));
-    }
-  }, []);
-
-  const categoryMapping = {
-    Sex: ['Male', 'Female'],
-    Ethnicity: ['Malay', 'Chinese', 'Indian', 'Orang Asli', 'Other', 'Non-citizen'],
-    'Education level': ['No formal education', 'Primary', 'Secondary', 'Tertiary', 'Do not know', 'Refused to answer'],
-  };
-
-  const prepareChartData = (category) => {
-    console.log('Preparing Chart Data for Category:', category);
-
-    if (!subdistrictData) {
-      console.warn(`No Subdistrict Data Available for Chart Preparation:`, subdistrictData);
-      return null;
-    }
-
-    const labels = categoryMapping[category];
-    const values = labels.map((label) => subdistrictData[label]?.n || 0);
-    const percentages = labels.map((label) => subdistrictData[label]?.percentage || 0);
-
-    console.log(`Chart Data for ${category}:`, { labels, values, percentages });
-
-    return {
-      barData: {
-        labels,
-        datasets: [
-          {
-            label: `${category} distribution`,
-            data: values,
-            backgroundColor: 'rgba(75, 192, 192, 0.4)',
-            borderColor: 'rgba(75, 192, 192, 0.8)',
-            borderWidth: 1,
-          },
-        ],
-      },
-      pieData: {
-        labels,
-        datasets: [
-          {
-            data: percentages,
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.4)',
-              'rgba(54, 162, 235, 0.4)',
-              'rgba(255, 206, 86, 0.4)',
-              'rgba(75, 192, 192, 0.4)',
-              'rgba(153, 102, 255, 0.4)',
-              'rgba(255, 159, 64, 0.4)',
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 0.8)',
-              'rgba(54, 162, 235, 0.8)',
-              'rgba(255, 206, 86, 0.8)',
-              'rgba(75, 192, 192, 0.8)',
-              'rgba(153, 102, 255, 0.8)',
-              'rgba(255, 159, 64, 0.8)',
-            ],
-            borderWidth: 1,
-          },
-        ],
-      },
-    };
-  };
-
-  const categories = [
-    { name: 'Sex', chartType: 'pie' },
-    { name: 'Ethnicity', chartType: 'bar' },
-    { name: 'Education level', chartType: 'bar' },
-  ];
+  // Render
+  if (loading) return <div>Loading chart data...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="dashboard-container">
-      <nav className="sidebar">
-        <h2>Subdistricts</h2>
-        <ul>
-          {Object.keys(subdistrictCoordinates).map((district) => (
-            <li key={district}>
-              <button onClick={() => setSelectedSubdistrict(district)}>
-                {district.replace('_', ' ')}
-              </button>
-            </li>
-          ))}
-        </ul>
-      </nav>
-
-      <div className="main-content">
-        <header className="navbar">
-          <h1>
-            HEALTH 2013 SUMMARY FOR {selectedSubdistrict.replace('_', ' ').toUpperCase()}
-          </h1>
-        </header>
-
-        <div className="map-container">
-          <div id="map2013" style={{ height: '400px', marginBottom: '20px' }}></div>
-        </div>
-
-        <div className="charts-container">
-          {categories.map((category) => {
-            const chartData = prepareChartData(category.name);
-            console.log('Chart Data Prepared:', chartData);
-            if (!chartData) return null;
-
-            return (
-              <div key={category.name} className="chart">
-                <h3>{category.name}</h3>
-                <div style={{ height: '400px', width: '100%' }}>
-                  {category.chartType === 'bar' && (
-                    <Bar data={chartData.barData} options={{ maintainAspectRatio: false }} />
-                  )}
-                  {category.chartType === 'pie' && (
-                    <Pie data={chartData.pieData} options={{ maintainAspectRatio: false }} />
-                  )}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+    <div>
+      <canvas id="healthChart2013" width="400" height="200"></canvas>
     </div>
   );
 };
 
 export default HealthChart2013;
+
 
 
 
