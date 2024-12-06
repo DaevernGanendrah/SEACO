@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const HealthRound2013 = require('../models/HealthRound2013');
-const HealthRound2018 = require('../models/HealthRound2018');
+const { HealthRound2018, HealthRound2013 } = require('../models/healthModels');
 
 // Route for 2013 data
 router.get('/2013', async (req, res) => {
