@@ -20,40 +20,40 @@ const HealthChart2013 = () => {
     Overall: [2.5147, 102.8151],
   };
 
+  // Fetch data from the backend
   useEffect(() => {
-    const backendUrl =
-      process.env.REACT_APP_BACKEND_URL || "https://seaco.onrender.com";
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || "https://seaco.onrender.com";
+
     fetch(`${backendUrl}/api/health/2013`)
       .then((response) => response.json())
       .then((data) => {
-        setData2013(data[0]?.subdistricts || {});
-        setSubdistrictData(data[0]?.subdistricts[selectedSubdistrict] || {});
+        if (data && data.length > 0) {
+          const healthData = data[0]?.subdistricts || {};
+          setData2013(healthData);
+          setSubdistrictData(healthData[selectedSubdistrict]);
+        } else {
+          console.warn("No data returned from API");
+        }
       })
       .catch((error) => console.error("Error fetching 2013 data:", error));
   }, []);
 
+  // Update subdistrict data when selection changes
   useEffect(() => {
     if (data2013[selectedSubdistrict]) {
       setSubdistrictData(data2013[selectedSubdistrict]);
     }
 
     if (mapRef.current) {
-      const coordinates =
-        subdistrictCoordinates[selectedSubdistrict] ||
-        subdistrictCoordinates.Overall;
-      mapRef.current.setView(coordinates, 14, {
-        animate: true,
-        duration: 0.5,
-      });
+      const coordinates = subdistrictCoordinates[selectedSubdistrict] || subdistrictCoordinates.Overall;
+      mapRef.current.setView(coordinates, 14, { animate: true, duration: 0.5 });
     }
   }, [selectedSubdistrict, data2013]);
 
+  // Initialize Leaflet map
   useEffect(() => {
     if (!mapRef.current) {
-      mapRef.current = L.map("map2013").setView(
-        subdistrictCoordinates.Overall,
-        10
-      );
+      mapRef.current = L.map("map2013").setView(subdistrictCoordinates.Overall, 10);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 18,
@@ -82,31 +82,40 @@ const HealthChart2013 = () => {
                 .addTo(mapRef.current)
                 .bindPopup(subdistrict.replace("_", " "));
 
-              marker.on("click", () => {
-                setSelectedSubdistrict(subdistrict);
-              });
+              marker.on("click", () => setSelectedSubdistrict(subdistrict));
             }
           });
         })
-        .catch((error) => console.error("Error loading GeoJSON data:", error));
+        .catch((error) => console.log("Error loading GeoJSON data:", error));
     }
   }, []);
 
-  const prepareChartData = (fields) => {
+  const categoryMapping = {
+    Sex: ["Male", "Female"],
+    Ethnicity: ["Malay", "Chinese", "Indian", "Orang Asli", "Other", "Non-citizen"],
+    "Education level": [
+      "No formal education",
+      "Primary",
+      "Secondary",
+      "Tertiary",
+      "Do not know",
+      "Refused to answer",
+    ],
+  };
+
+  const prepareChartData = (category) => {
     if (!subdistrictData) return null;
 
-    const labels = fields;
+    const labels = categoryMapping[category];
     const values = labels.map((label) => subdistrictData[label]?.n || 0);
-    const percentages = labels.map(
-      (label) => subdistrictData[label]?.percentage || 0
-    );
+    const percentages = labels.map((label) => subdistrictData[label]?.percentage || 0);
 
     return {
       barData: {
         labels,
         datasets: [
           {
-            label: "Count",
+            label: `${category} distribution`,
             data: values,
             backgroundColor: "rgba(75, 192, 192, 0.4)",
             borderColor: "rgba(75, 192, 192, 0.8)",
@@ -143,12 +152,9 @@ const HealthChart2013 = () => {
   };
 
   const categories = [
-    { name: "Sex", fields: ["Male", "Female"], chartType: "pie" },
-    {
-      name: "Ethnicity",
-      fields: ["Malay", "Chinese", "Indian", "Orang Asli", "Other"],
-      chartType: "bar",
-    },
+    { name: "Sex", chartType: "pie" },
+    { name: "Ethnicity", chartType: "bar" },
+    { name: "Education level", chartType: "bar" },
   ];
 
   return (
@@ -169,8 +175,7 @@ const HealthChart2013 = () => {
       <div className="main-content">
         <header className="navbar">
           <h1>
-            HEALTH 2013 SUMMARY FOR{" "}
-            {selectedSubdistrict.replace("_", " ").toUpperCase()}
+            HEALTH 2013 SUMMARY FOR {selectedSubdistrict.replace("_", " ").toUpperCase()}
           </h1>
         </header>
 
@@ -180,7 +185,7 @@ const HealthChart2013 = () => {
 
         <div className="charts-container">
           {categories.map((category) => {
-            const chartData = prepareChartData(category.fields);
+            const chartData = prepareChartData(category.name);
             if (!chartData) return null;
 
             return (
@@ -204,6 +209,7 @@ const HealthChart2013 = () => {
 };
 
 export default HealthChart2013;
+
 
 
 
