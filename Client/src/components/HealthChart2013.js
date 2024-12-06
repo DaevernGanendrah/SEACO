@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Bar, Pie } from 'react-chartjs-2';
-import 'chart.js/auto';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-import './Dashboard.css';
+import React, { useState, useEffect, useRef } from "react";
+import { Bar, Pie } from "react-chartjs-2";
+import "chart.js/auto";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import "./Dashboard.css";
 
 const HealthChart2013 = () => {
-  const [selectedSubdistrict, setSelectedSubdistrict] = useState('BEKOK');
+  const [selectedSubdistrict, setSelectedSubdistrict] = useState("BEKOK");
   const [data2013, setData2013] = useState({});
   const [subdistrictData, setSubdistrictData] = useState(null);
   const mapRef = useRef(null);
@@ -20,34 +20,27 @@ const HealthChart2013 = () => {
     Overall: [2.5147, 102.8151],
   };
 
-  // Fetch data from the backend
   useEffect(() => {
-    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://seaco.onrender.com';
+    const backendUrl =
+      process.env.REACT_APP_BACKEND_URL || "https://seaco.onrender.com";
     fetch(`${backendUrl}/api/health/2013`)
       .then((response) => response.json())
       .then((data) => {
-        if (data && data.length > 0) {
-          // Assuming `subdistricts` is the key in your MongoDB collection for subdistrict-specific data
-          const healthData = data.reduce((acc, item) => {
-            return { ...acc, ...item.subdistricts };
-          }, {});
-          setData2013(healthData);
-          setSubdistrictData(healthData[selectedSubdistrict]);
-        } else {
-          console.warn('No data returned from API');
-        }
+        setData2013(data[0]?.subdistricts || {});
+        setSubdistrictData(data[0]?.subdistricts[selectedSubdistrict] || {});
       })
-      .catch((error) => console.error('Error fetching 2013 data:', error));
+      .catch((error) => console.error("Error fetching 2013 data:", error));
   }, []);
 
-  // Update selected subdistrict data and map view
   useEffect(() => {
     if (data2013[selectedSubdistrict]) {
       setSubdistrictData(data2013[selectedSubdistrict]);
     }
 
     if (mapRef.current) {
-      const coordinates = subdistrictCoordinates[selectedSubdistrict] || subdistrictCoordinates.Overall;
+      const coordinates =
+        subdistrictCoordinates[selectedSubdistrict] ||
+        subdistrictCoordinates.Overall;
       mapRef.current.setView(coordinates, 14, {
         animate: true,
         duration: 0.5,
@@ -55,53 +48,68 @@ const HealthChart2013 = () => {
     }
   }, [selectedSubdistrict, data2013]);
 
-  // Initialize the map
   useEffect(() => {
     if (!mapRef.current) {
-      mapRef.current = L.map('map2013').setView(subdistrictCoordinates.Overall, 10);
+      mapRef.current = L.map("map2013").setView(
+        subdistrictCoordinates.Overall,
+        10
+      );
 
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 18,
         minZoom: 5,
       }).addTo(mapRef.current);
 
-      Object.keys(subdistrictCoordinates).forEach((subdistrict) => {
-        if (subdistrict !== 'Overall') {
-          const marker = L.marker(subdistrictCoordinates[subdistrict])
-            .addTo(mapRef.current)
-            .bindPopup(subdistrict.replace('_', ' '));
+      fetch("SEACO.geojson")
+        .then((response) => response.json())
+        .then((data) => {
+          const segamatFeature = data.features.filter(
+            (feature) => feature.properties.district === "Segamat"
+          );
 
-          marker.on('click', () => {
-            setSelectedSubdistrict(subdistrict);
+          L.geoJSON(segamatFeature, {
+            style: {
+              color: "#FF0000",
+              fillColor: "#ffffff",
+              fillOpacity: 0.5,
+              weight: 2,
+            },
+          }).addTo(mapRef.current);
+
+          Object.keys(subdistrictCoordinates).forEach((subdistrict) => {
+            if (subdistrict !== "Overall") {
+              const marker = L.marker(subdistrictCoordinates[subdistrict])
+                .addTo(mapRef.current)
+                .bindPopup(subdistrict.replace("_", " "));
+
+              marker.on("click", () => {
+                setSelectedSubdistrict(subdistrict);
+              });
+            }
           });
-        }
-      });
+        })
+        .catch((error) => console.error("Error loading GeoJSON data:", error));
     }
   }, []);
 
-  // Prepare data for charts
-  const categoryMapping = {
-    Sex: ['Male', 'Female'],
-    Ethnicity: ['Malay', 'Chinese', 'Indian', 'Orang Asli', 'Other', 'Non-citizen'],
-    'Education level': ['No formal education', 'Primary', 'Secondary', 'Tertiary', 'Do not know', 'Refused to answer'],
-  };
-
-  const prepareChartData = (category) => {
+  const prepareChartData = (fields) => {
     if (!subdistrictData) return null;
 
-    const labels = categoryMapping[category];
+    const labels = fields;
     const values = labels.map((label) => subdistrictData[label]?.n || 0);
-    const percentages = labels.map((label) => subdistrictData[label]?.percentage || 0);
+    const percentages = labels.map(
+      (label) => subdistrictData[label]?.percentage || 0
+    );
 
     return {
       barData: {
         labels,
         datasets: [
           {
-            label: `${category} distribution`,
+            label: "Count",
             data: values,
-            backgroundColor: 'rgba(75, 192, 192, 0.4)',
-            borderColor: 'rgba(75, 192, 192, 0.8)',
+            backgroundColor: "rgba(75, 192, 192, 0.4)",
+            borderColor: "rgba(75, 192, 192, 0.8)",
             borderWidth: 1,
           },
         ],
@@ -112,20 +120,20 @@ const HealthChart2013 = () => {
           {
             data: percentages,
             backgroundColor: [
-              'rgba(255, 99, 132, 0.4)',
-              'rgba(54, 162, 235, 0.4)',
-              'rgba(255, 206, 86, 0.4)',
-              'rgba(75, 192, 192, 0.4)',
-              'rgba(153, 102, 255, 0.4)',
-              'rgba(255, 159, 64, 0.4)',
+              "rgba(255, 99, 132, 0.4)",
+              "rgba(54, 162, 235, 0.4)",
+              "rgba(255, 206, 86, 0.4)",
+              "rgba(75, 192, 192, 0.4)",
+              "rgba(153, 102, 255, 0.4)",
+              "rgba(255, 159, 64, 0.4)",
             ],
             borderColor: [
-              'rgba(255, 99, 132, 0.8)',
-              'rgba(54, 162, 235, 0.8)',
-              'rgba(255, 206, 86, 0.8)',
-              'rgba(75, 192, 192, 0.8)',
-              'rgba(153, 102, 255, 0.8)',
-              'rgba(255, 159, 64, 0.8)',
+              "rgba(255, 99, 132, 0.8)",
+              "rgba(54, 162, 235, 0.8)",
+              "rgba(255, 206, 86, 0.8)",
+              "rgba(75, 192, 192, 0.8)",
+              "rgba(153, 102, 255, 0.8)",
+              "rgba(255, 159, 64, 0.8)",
             ],
             borderWidth: 1,
           },
@@ -134,11 +142,13 @@ const HealthChart2013 = () => {
     };
   };
 
-  // Render the charts
   const categories = [
-    { name: 'Sex', chartType: 'pie' },
-    { name: 'Ethnicity', chartType: 'bar' },
-    { name: 'Education level', chartType: 'bar' },
+    { name: "Sex", fields: ["Male", "Female"], chartType: "pie" },
+    {
+      name: "Ethnicity",
+      fields: ["Malay", "Chinese", "Indian", "Orang Asli", "Other"],
+      chartType: "bar",
+    },
   ];
 
   return (
@@ -149,7 +159,7 @@ const HealthChart2013 = () => {
           {Object.keys(subdistrictCoordinates).map((district) => (
             <li key={district}>
               <button onClick={() => setSelectedSubdistrict(district)}>
-                {district.replace('_', ' ')}
+                {district.replace("_", " ")}
               </button>
             </li>
           ))}
@@ -158,26 +168,29 @@ const HealthChart2013 = () => {
 
       <div className="main-content">
         <header className="navbar">
-          <h1>HEALTH 2013 SUMMARY FOR {selectedSubdistrict.replace('_', ' ').toUpperCase()}</h1>
+          <h1>
+            HEALTH 2013 SUMMARY FOR{" "}
+            {selectedSubdistrict.replace("_", " ").toUpperCase()}
+          </h1>
         </header>
 
         <div className="map-container">
-          <div id="map2013" style={{ height: '400px', marginBottom: '20px' }}></div>
+          <div id="map2013" style={{ height: "400px", marginBottom: "20px" }}></div>
         </div>
 
         <div className="charts-container">
           {categories.map((category) => {
-            const chartData = prepareChartData(category.name);
+            const chartData = prepareChartData(category.fields);
             if (!chartData) return null;
 
             return (
               <div key={category.name} className="chart">
                 <h3>{category.name}</h3>
-                <div style={{ height: '400px', width: '100%' }}>
-                  {category.chartType === 'bar' && (
+                <div style={{ height: "400px", width: "100%" }}>
+                  {category.chartType === "bar" && (
                     <Bar data={chartData.barData} options={{ maintainAspectRatio: false }} />
                   )}
-                  {category.chartType === 'pie' && (
+                  {category.chartType === "pie" && (
                     <Pie data={chartData.pieData} options={{ maintainAspectRatio: false }} />
                   )}
                 </div>
