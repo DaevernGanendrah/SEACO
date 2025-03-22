@@ -182,14 +182,7 @@ class Dashboard extends React.Component {
               {index === 1 && <EconomicActivitiesChart />}
               {index === 2 && <HouseholdChart />}
               {index === 3 && <HealthChart />}
-             
-              {index === 4 && (
-                // Content for "People" section goes here
-                <div>
-                  {/* If there is no specific content for "People", you can add general information or leave it blank. */}
-                  <p>Information on People will be displayed here.</p>
-                </div>
-              )}
+              {index === 4 && <RadialProgressChart/>}
             </div>
           </div>
         ))}
