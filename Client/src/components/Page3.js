@@ -1,23 +1,5 @@
-// import React from 'react'; 
-
-
-// function Page3() {
-//     return (
-//       <div>
-//         <h1>This is Page 3</h1>
-//       </div>
-//     );
-//   }
-//   export default Page3;
-
-
-
-
-
-
-
 import React from 'react';
-import './Page3.css'; // Assuming you're styling with CSS
+import './Page3.css'; 
 import { useNavigate } from 'react-router-dom'; 
 
 function Page3() {
@@ -35,6 +17,3 @@ function Page3() {
   );
 }
 export default Page3;
-
-
-// className='navigateButton'
