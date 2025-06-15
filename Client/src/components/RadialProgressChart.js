@@ -1,7 +1,7 @@
 import React from 'react';
 import { Bar, Pie, Doughnut } from 'react-chartjs-2';
 import 'chart.js/auto';
-import './householdchart.css'; // Keep the styling consistent
+import './householdchart.css'; 
 
 const HouseholdChart = () => {
   const barChartData = {
